@@ -1,7 +1,7 @@
 package GolestanView;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.image.ImageView;
@@ -22,9 +22,9 @@ public class Controller {
     private Label lbl3;
 
     @FXML
-    private Button entrancebtn;
+    private ImageView logoimg;
 
     @FXML
-    private ImageView logoimg;
+    private JFXButton entrancebtn;
 
 }

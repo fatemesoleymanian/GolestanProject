@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="UserMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="885.0" prefWidth="657.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanView.UserMenu">
+   <children>
+      <Label layoutX="294.0" text="به نام خدا">
+         <font>
+            <Font name="Arabic Typesetting" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="34.0" text="سیستم جامع دانشگاهی گلستان " />
+      <Label layoutX="115.0" layoutY="34.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی" />
+      <Label fx:id="UserNameLbl" layoutX="493.0" layoutY="85.0" prefHeight="25.0" prefWidth="164.0" text="اسم کاربر اینجا میاد" />
+      <JFXButton fx:id="ExitBtn" layoutX="423.0" layoutY="85.0" text="خروج" textFill="DARKBLUE" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </JFXButton>
+
+      <TabPane layoutY="113.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.94" prefHeight="746.0" prefWidth="657.0" style="-fx-background-color: #FFF8Dc;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="113.0">
+        <tabs>
+          <Tab fx:id="AmozeshTab" text="آموزش">
+               <content>
+                  <ComboBox fx:id="AmozshCB" prefHeight="25.0" prefWidth="170.0" />
+               </content>
+            </Tab>
+          <Tab fx:id="MaliTab" text="مالی و اداری">
+               <content>
+                  <ComboBox fx:id="MaliCB" editable="true" prefHeight="25.0" prefWidth="170.0" promptText="تسویه حساب دانشجویان" visibleRowCount="2">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                  </ComboBox>
+               </content>
+            </Tab>
+            <Tab fx:id="SbtenamTab" text="ثبت نام">
+               <content>
+                  <ComboBox fx:id="SabtnamCB" prefHeight="25.0" prefWidth="166.0" />
+               </content></Tab>
+            <Tab fx:id="ArzeshyabiTab" text="ارزشیابی">
+               <content>
+                  <ComboBox fx:id="ArzeshyabiCB" prefHeight="25.0" prefWidth="167.0" />
+               </content></Tab>
+            <Tab fx:id="SystemTab" text="سیستم">
+               <content>
+                  <ComboBox fx:id="SystemCB" prefHeight="25.0" prefWidth="164.0" />
+               </content></Tab>
+        </tabs>
+      </TabPane>
+      <ImageView fitHeight="65.0" fitWidth="73.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@uniArm.png" />
+         </image>
+      </ImageView>
+      <JFXListView fx:id="LVetelateJameDaneshjo" disable="true" layoutX="14.0" layoutY="146.0" opacity="0.22" prefHeight="636.0" prefWidth="465.0" style="-fx-background-color: #FFFAF0;" />
+      <JFXListView fx:id="LVshahrie" disable="true" layoutX="9.0" layoutY="146.0" opacity="0.22" prefHeight="636.0" prefWidth="474.0" style="-fx-background-color: #FFFAF0;" />
+      <JFXListView fx:id="LVtasvieHesab" disable="true" layoutX="27.0" layoutY="152.0" opacity="0.22" prefHeight="636.0" prefWidth="453.0" style="-fx-background-color: #FFFAF0;" />
+      <JFXListView fx:id="LVentekhabVahed" disable="true" layoutX="12.0" layoutY="152.0" opacity="0.22" prefHeight="621.0" prefWidth="465.0" style="-fx-background-color: #FFFAF0;" />
+      <JFXListView fx:id="LVgozaresh" disable="true" layoutX="14.0" layoutY="165.0" opacity="0.22" prefHeight="592.0" prefWidth="465.0" style="-fx-background-color: #FFFAF0;" />
+      <JFXListView fx:id="LVChanfePass" disable="true" layoutX="13.0" layoutY="165.0" opacity="0.22" prefHeight="559.0" prefWidth="465.0" style="-fx-background-color: #FFFAF0;" />
+   </children>
+</AnchorPane>

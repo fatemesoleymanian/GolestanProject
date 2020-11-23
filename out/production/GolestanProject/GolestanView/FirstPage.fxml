@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -9,32 +9,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="Firstpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanView.Controller">
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
    <children>
       <Separator fx:id="sepUni" layoutX="7.0" layoutY="88.0" prefHeight="8.0" prefWidth="586.0" />
-      <Label fx:id="lbl2" layoutX="112.0" layoutY="175.0" prefHeight="80.0" prefWidth="328.0" text="G O L E S T A N" textFill="#d00d0d">
+      <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="150.0" prefHeight="88.0" prefWidth="552.0" text="گلستان" textFill="#d00d0d">
          <font>
-            <Font name="Arial Black" size="36.0" />
+            <Font name="B Elham" size="79.0" />
          </font>
       </Label>
-      <Label fx:id="lbl3" layoutX="155.0" layoutY="271.0" prefHeight="50.0" prefWidth="264.0" text="Comprehensive university system">
+      <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="268.0" prefHeight="50.0" prefWidth="264.0" text="سیستم جامع دانشگاهی">
          <font>
-            <Font name="Arial Black" size="14.0" />
+            <Font name="AdobeArabic-Regular" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="entrancebtn" layoutX="224.0" layoutY="425.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="129.0" style="-fx-border-color: #D3D3D3;" text="Enter to Golestan">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
       <ImageView fx:id="logoimg" fitHeight="80.0" fitWidth="120.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@uniArm.png" />
          </image>
       </ImageView>
+      <JFXButton fx:id="entrancebtn" layoutX="227.0" layoutY="436.0" prefHeight="50.0" prefWidth="138.0" text="ورود به سیستم">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
