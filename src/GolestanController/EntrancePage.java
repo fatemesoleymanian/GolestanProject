@@ -1,4 +1,4 @@
-package GolestanView;
+package GolestanController;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;

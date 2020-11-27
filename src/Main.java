@@ -1,4 +1,4 @@
-package GolestanView;
+
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

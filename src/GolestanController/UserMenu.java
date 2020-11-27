@@ -1,4 +1,4 @@
-package GolestanView;
+package GolestanController;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;

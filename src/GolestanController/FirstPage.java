@@ -1,4 +1,4 @@
-package GolestanView;
+package GolestanController;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
@@ -7,7 +7,7 @@ import javafx.scene.control.Separator;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class Controller {
+public class FirstPage {
 
     @FXML
     private AnchorPane Firstpane;
