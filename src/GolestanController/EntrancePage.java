@@ -2,64 +2,52 @@ package GolestanController;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TitledPane;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 
 public class EntrancePage {
 
     @FXML
-    private TitledPane golestanPane;
+    private Button reseyStPassword;
 
     @FXML
-    private AnchorPane pagePane;
-
-    @FXML
-    private ImageView armImg;
-
-    @FXML
-    private Label lbl1;
-
-    @FXML
-    private Label lbl2;
-
-    @FXML
-    private Label lbl3;
-
-    @FXML
-    private Label userNameLbl;
-
-    @FXML
-    private Label passLbl;
-
-    @FXML
-    private JFXPasswordField passTxtField;
-
-    @FXML
-    private Label codeLbl;
-
-    @FXML
-    private ImageView codeImg;
-
-    @FXML
-    private Button rstPassTeaBtn;
-
-    @FXML
-    private Button rstPassStBtn;
+    private Button resetTePassword;
 
     @FXML
     private Button exitBtn;
 
     @FXML
-    private Button entranceBtn;
+    private Button enterBtn;
 
     @FXML
-    private JFXTextField usernameTextField;
+    private JFXPasswordField txtPassword;
 
     @FXML
-    private JFXTextField codeTxtField;
+    private JFXTextField txtCode;
+
+    @FXML
+    private JFXTextField txtUsername;
+
+    @FXML
+    void enterBtnPresss(ActionEvent event) {
+
+    }
+
+    @FXML
+    void exitBtnPress(ActionEvent event) {
+
+    }
+
+    @FXML
+    void resetTePasswordPress(ActionEvent event) {
+
+    }
+
+    @FXML
+
+    public void resetStPasswordPress(ActionEvent actionEvent) {
+    }
+
 
 }
