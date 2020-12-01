@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox fx:id="teachDrawer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="119.0" prefWidth="260.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.StudentMenuDrawers">
+   <children>
+      <JFXButton fx:id="TuitionBtn" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#PressTuitionBtn" prefHeight="19.0" prefWidth="260.0" text="پرداخت شهریه" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="halfReportBtn" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#PresshalfReportBtn" prefHeight="41.0" prefWidth="260.0" text="گزارش نیمسال دانشجو" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="fullReportBtn" onAction="#PressfullReportBtn" prefHeight="35.0" prefWidth="260.0" text="گزارش دانشجو" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="fullInfoBtn" onAction="#PressfullInfoBtn" prefHeight="48.0" prefWidth="260.0" text="اطلاعات جامع دانشجو" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:id="systemDrawer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.StudentMenuDrawers">
+   <children>
+      <JFXButton fx:id="changePasswordBtn" onAction="#PresschangePasswordBtn" prefHeight="34.0" prefWidth="260.0" text="تغییر گذرواژه" textFill="WHITE" />
+      <JFXButton fx:id="resetPasswordBtn" onAction="#PressresetPasswordBtn" prefHeight="35.0" prefWidth="260.0" text="تنظیمات بازیابی کلمه عبور" textFill="WHITE" />
+   </children>
+</VBox>

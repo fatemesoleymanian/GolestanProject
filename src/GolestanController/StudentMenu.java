@@ -23,7 +23,20 @@ public class StudentMenu implements Initializable {
     private AnchorPane UserMenuPane;
 
     @FXML
-    private JFXDrawer drawer;
+    private JFXDrawer mainDrawer;
+
+    @FXML
+    private JFXDrawer TeachingDrawer;
+
+    @FXML
+    private JFXDrawer OfficialDrawer;
+
+    @FXML
+    private JFXDrawer RegisterDrawer;
+
+    @FXML
+    private JFXDrawer SystemDrawer;
+
 
     @FXML
     private JFXHamburger hamburgurMenu;
@@ -43,8 +56,6 @@ public class StudentMenu implements Initializable {
     @FXML
     private JFXButton registerBtn;
 
-    @FXML
-    private JFXButton evaluateBtn;
 
     @FXML
     private JFXButton systemBtn;
@@ -64,9 +75,7 @@ public class StudentMenu implements Initializable {
     @FXML
     public void registerPressBtn(javafx.event.ActionEvent actionEvent) {
     }
-    @FXML
-    public void evaluatePressBtn(javafx.event.ActionEvent actionEvent) {
-    }
+
     @FXML
     public void systemPressBtn(javafx.event.ActionEvent actionEvent) {
     }
@@ -74,13 +83,13 @@ public class StudentMenu implements Initializable {
     public void exitPressBtn(javafx.event.ActionEvent actionEvent) {
     }
 
-    //hamburgur and initialize is supposed to be play for student menu
+    //hamburgur and initialize is supposed to be played for student menu
     @FXML
     void hamburgurOnMouseClicked(MouseEvent event) {
         hamburgerBackArrowBasicTransition.setRate(hamburgerBackArrowBasicTransition.getRate()* -1);
         hamburgerBackArrowBasicTransition.play();
-        if (drawer.isOpened())  drawer.close();
-        else drawer.open();
+        if (mainDrawer.isOpened())  mainDrawer.close();
+        else mainDrawer.open();
 
     }
     @Override
@@ -89,7 +98,7 @@ public class StudentMenu implements Initializable {
         hamburgerBackArrowBasicTransition.setRate(-1);
         try {
             VBox drawerContent = FXMLLoader.load(getClass().getResource("GolestanView/StudentMenuDPart.fxml"));
-            drawer.setSidePane(drawerContent);
+            mainDrawer.setSidePane(drawerContent);
         } catch (IOException e) {
             e.printStackTrace();
         }
