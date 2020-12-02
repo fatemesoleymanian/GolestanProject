@@ -18,7 +18,7 @@ import java.io.IOException;
 import javafx.scene.control.Label;
 
 public class StudentMenu implements Initializable {
-
+    //student menu
     @FXML
     private AnchorPane UserMenuPane;
 
@@ -43,7 +43,7 @@ public class StudentMenu implements Initializable {
 
     private HamburgerBackArrowBasicTransition hamburgerBackArrowBasicTransition;
 
-
+    //students vbox
     @FXML
     private Label userNameLbl;
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="264.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.TeacherMenu">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@teacher.jpg" />
+         </image>
+         <VBox.margin>
+            <Insets left="60.0" top="10.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label fx:id="teacherNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="271.0" text="teacher name">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="teachersBtn" onAction="#PressteachersBtn" prefHeight="100.0" prefWidth="272.0" text="اساتید">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="studentsBtn" onAction="#PressstudentsBtn" prefHeight="100.0" prefWidth="264.0" text="دانشجویان">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="evaluatingBtn" onAction="#PressevaluatingBtn" prefHeight="100.0" prefWidth="265.0" text="ارزشیابی">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="exitBtn" onAction="#pressexitBtn" prefHeight="100.0" prefWidth="264.0" text="خروج">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

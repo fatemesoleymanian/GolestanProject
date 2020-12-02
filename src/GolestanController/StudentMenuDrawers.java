@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
 public class StudentMenuDrawers {
-   //teaching drawer
+   //amoozesh vbox(taching drawer.fxml)
     @FXML
     private VBox teachDrawer;
 
@@ -25,8 +25,21 @@ public class StudentMenuDrawers {
     @FXML
     public void PressTuitionBtn(ActionEvent actionEvent) {
     }
+    @FXML
+    public void PressfullInfoBtn(ActionEvent actionEvent) {
+    }
 
-    //system drawer
+
+
+    @FXML
+    public void PressfullReportBtn(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void PresshalfReportBtn(ActionEvent actionEvent) {
+    }
+
+//system vbox (system drawer.fxml)
     @FXML
     private VBox systemDrawer;
 
@@ -45,22 +58,7 @@ public class StudentMenuDrawers {
     public void PressresetPasswordBtn(ActionEvent actionEvent) {
     }
 
-
-
-    @FXML
-    public void PressfullInfoBtn(ActionEvent actionEvent) {
-    }
-
-
-
-    @FXML
-    public void PressfullReportBtn(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void PresshalfReportBtn(ActionEvent actionEvent) {
-    }
-    // official drawer
+//mali va edari vbox (official drawer.fxml)
     @FXML
     private VBox officialDrawer;
 
@@ -70,7 +68,7 @@ public class StudentMenuDrawers {
     @FXML
     public void PresscheckOutBtn(ActionEvent actionEvent) {
     }
-  //register drawer
+//sabte nam vbox (register drawer.fxml)
     @FXML
     private VBox registerDrawer;
 
@@ -87,6 +85,6 @@ public class StudentMenuDrawers {
     public void PressemergencyLeaveBtn(ActionEvent actionEvent) {
     }
 
-
+   //hanuz testesh nkrdia jigr
 
 }
