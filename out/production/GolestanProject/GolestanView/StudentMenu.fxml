@@ -1,32 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="UserMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="885.0" prefWidth="657.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.StudentMenu">
+<AnchorPane fx:id="StudentMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="657.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.StudentMenu">
    <children>
       <Label layoutX="294.0" text="به نام خدا">
          <font>
             <Font name="Arabic Typesetting" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="344.0" layoutY="34.0" text="سیستم جامع دانشگاهی گلستان " />
-      <Label layoutX="115.0" layoutY="34.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی" />
+      <Label layoutX="346.0" layoutY="42.0" text="سیستم جامع دانشگاهی گلستان ">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="115.0" layoutY="42.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <ImageView fitHeight="65.0" fitWidth="73.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@uniArm.png" />
          </image>
       </ImageView>
-      <JFXDrawer fx:id="mainDrawer" layoutX="-1.0" layoutY="129.0" prefHeight="712.0" prefWidth="264.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0" />
-      <JFXHamburger fx:id="hamburgurMenu" layoutX="546.0" layoutY="24.0" onMouseClicked="#hamburgurOnMouseClicked" prefHeight="46.0" prefWidth="68.0" />
-      <JFXDrawer fx:id="TeachingDrawer" layoutX="264.0" layoutY="271.0" prefHeight="119.0" prefWidth="260.0" />
-      <JFXDrawer fx:id="OfficialDrawer" layoutX="264.0" layoutY="435.0" prefHeight="50.0" prefWidth="231.0" />
-      <JFXDrawer fx:id="RegisterDrawer" layoutX="264.0" layoutY="584.0" prefHeight="70.0" prefWidth="260.0" />
-      <JFXDrawer fx:id="SystemDrawer" layoutX="262.0" layoutY="712.0" prefHeight="70.0" prefWidth="260.0" />
+      <JFXHamburger fx:id="hamburgurMenu" layoutX="575.0" layoutY="140.0" onMouseClicked="#hamburgurOnMouseClicked" prefHeight="46.0" prefWidth="68.0">
+         <effect>
+            <DropShadow height="62.51" radius="37.4275" width="89.2" />
+         </effect></JFXHamburger>
+      <VBox fx:id="parent" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="712.0" prefWidth="264.0" style="-fx-background-color: #000000;" visible="false">
+         <children>
+            <ImageView fitHeight="214.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StudentImg.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="userNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="264.0" text="username" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="TeachingBtn" onAction="#TeachingPressBtn" prefHeight="94.0" prefWidth="264.0" text="آموزش" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" height="198.66" radius="112.91499999999999" width="255.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="officalBtn" onAction="#officalPressBtn" prefHeight="94.0" prefWidth="264.0" text="مالی و اداری" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" height="92.16" radius="79.68" width="228.56" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="registerBtn" onAction="#registerPressBtn" prefHeight="94.0" prefWidth="264.0" text="ثبت نام" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" height="41.76" radius="62.6325" width="210.77" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="systemBtn" onAction="#systemPressBtn" prefHeight="94.0" prefWidth="264.0" text="سیستم" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" height="130.71" radius="68.56" width="145.53" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="exitBtn" onAction="#exitPressBtn" prefHeight="94.0" prefWidth="264.0" text="خروج" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" height="86.23" radius="56.7" width="142.57" />
+               </effect>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="104.02" radius="57.44" width="127.74" />
+         </effect>
+      </VBox>
+      <VBox fx:id="teachDrawer" layoutX="264.0" layoutY="325.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="119.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+         <children>
+            <JFXButton fx:id="TuitionBtn" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#PressTuitionBtn" prefHeight="19.0" prefWidth="260.0" text="پرداخت شهریه" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="halfReportBtn" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#PresshalfReportBtn" prefHeight="41.0" prefWidth="260.0" text="گزارش نیمسال دانشجو" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="fullReportBtn" onAction="#PressfullReportBtn" prefHeight="35.0" prefWidth="260.0" text="گزارش دانشجو" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="fullInfoBtn" onAction="#PressfullInfoBtn" prefHeight="48.0" prefWidth="260.0" text="اطلاعات جامع دانشجو" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="74.37" radius="50.77" width="130.71" />
+         </effect>
+      </VBox>
+      <VBox fx:id="officialDrawer" layoutX="264.0" layoutY="467.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="50.0" prefWidth="231.0" style="-fx-background-color: #000000;" visible="false">
+         <children>
+            <JFXButton fx:id="checkOutBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PresscheckOutBtn" prefHeight="50.0" prefWidth="244.0" text="تسویه حساب دانشجویان" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="74.37" radius="38.167500000000004" width="80.3" />
+         </effect>
+      </VBox>
+      <VBox fx:id="registerDrawer" layoutX="264.0" layoutY="548.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+         <children>
+            <JFXButton fx:id="unitSelectionBtn" onAction="#PressunitSelectionBtn" prefHeight="34.0" prefWidth="262.0" text="انتخاب واحد دانشجویان" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="emergencyLeaveBtn" onAction="#PressemergencyLeaveBtn" prefHeight="35.0" prefWidth="260.0" text="حذف اضطراری" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="92.16" radius="50.0275" width="109.95" />
+         </effect>
+      </VBox>
+      <VBox fx:id="systemDrawer" layoutX="264.0" layoutY="639.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+         <children>
+            <JFXButton fx:id="changePasswordBtn" onAction="#PresschangePasswordBtn" prefHeight="34.0" prefWidth="260.0" text="تغییر گذرواژه" textFill="WHITE" />
+            <JFXButton fx:id="resetPasswordBtn" onAction="#PressresetPasswordBtn" prefHeight="35.0" prefWidth="260.0" text="تنظیمات بازیابی کلمه عبور" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow height="104.03" radius="45.582499999999996" width="80.3" />
+         </effect>
+      </VBox>
+      <Separator layoutY="107.0" prefHeight="9.0" prefWidth="657.0" style="-fx-background-color: #000000;" />
    </children>
 </AnchorPane>

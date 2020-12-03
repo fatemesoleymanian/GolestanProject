@@ -31,12 +31,12 @@
             <Image url="@uniArm.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="entrancebtn" layoutX="207.0" layoutY="436.0" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم">
+      <JFXButton fx:id="entrancebtn" layoutX="207.0" layoutY="436.0" onAction="#pressentrancebtn" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </JFXButton>
-      <Hyperlink fx:id="contactUshyperlink" layoutX="503.0" layoutY="65.0" onAction="#pressHyperLink" prefHeight="23.0" prefWidth="76.0" text="ارتباط با ما" underline="true">
+      <Hyperlink fx:id="contactUshyperlink" layoutX="503.0" layoutY="65.0" onAction="#pressHyperLink" prefHeight="23.0" prefWidth="76.0" text="ارتباط با ما">
          <font>
             <Font size="14.0" />
          </font>
