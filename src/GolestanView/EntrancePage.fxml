@@ -58,9 +58,9 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <JFXPasswordField fx:id="txtPassword" layoutX="154.0" layoutY="389.0" prefHeight="25.0" prefWidth="164.0" />
-      <JFXTextField fx:id="txtCode" layoutX="154.0" layoutY="472.0" prefHeight="25.0" prefWidth="164.0" />
-      <JFXTextField fx:id="txtUsername" layoutX="154.0" layoutY="312.0" prefHeight="25.0" prefWidth="164.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="154.0" layoutY="389.0" prefHeight="25.0" prefWidth="188.0" />
+      <JFXTextField fx:id="txtCode" layoutX="154.0" layoutY="472.0" prefHeight="25.0" prefWidth="188.0" />
+      <JFXTextField fx:id="txtUsername" layoutX="154.0" layoutY="312.0" prefHeight="25.0" prefWidth="188.0" />
       <ImageView fitHeight="26.0" fitWidth="90.0" layoutX="54.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@captcha.png" />
