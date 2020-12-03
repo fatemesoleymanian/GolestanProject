@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -31,15 +32,23 @@
             <Image url="@uniArm.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="entrancebtn" layoutX="207.0" layoutY="436.0" onAction="#pressentrancebtn" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم">
+      <JFXButton fx:id="entrancebtn" layoutX="231.0" layoutY="435.0" onAction="#pressentrancebtn" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم" underline="true">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="17.0" />
          </font>
       </JFXButton>
-      <Hyperlink fx:id="contactUshyperlink" layoutX="503.0" layoutY="65.0" onAction="#pressHyperLink" prefHeight="23.0" prefWidth="76.0" text="ارتباط با ما">
+      <Hyperlink fx:id="contactUshyperlink" layoutX="479.0" layoutY="53.0" onAction="#pressHyperLink" prefHeight="23.0" prefWidth="76.0" text="ارتباط با ما" textFill="#00000b">
          <font>
             <Font size="14.0" />
          </font>
       </Hyperlink>
+      <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="555.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@3.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
    </children>
 </AnchorPane>
