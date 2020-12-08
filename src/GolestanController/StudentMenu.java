@@ -100,6 +100,7 @@ public class StudentMenu implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition=new HamburgerBackArrowBasicTransition(hamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
+       // userNameLbl.setText(EntrancePage.);//esmesho bgir az db//ghesmate 12
     }
 
     @FXML

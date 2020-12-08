@@ -41,7 +41,7 @@ public class EntrancePage {
         Stage stage = (Stage) enterBtn.getScene().getWindow();
         stage.close();
         Stage primarystage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/EmployeeMenu.fxml"));
         primarystage.setTitle("Golestan System");
         Scene scene = new Scene(root, 657, 870);
         primarystage.setScene(scene);

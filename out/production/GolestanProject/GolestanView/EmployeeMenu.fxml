@@ -23,7 +23,10 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-        <Label layoutX="115.0" layoutY="42.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی" />
+        <Label layoutX="115.0" layoutY="42.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
         <ImageView fitHeight="65.0" fitWidth="73.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@uniArm.png" />

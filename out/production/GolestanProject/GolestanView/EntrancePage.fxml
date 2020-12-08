@@ -28,10 +28,10 @@
       </Label>
       <Label layoutX="393.0" layoutY="312.0" text="شناسه کاربری  :">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="417.0" layoutY="401.0" text="گذرواژه :">
+      <Label layoutX="430.0" layoutY="401.0" text="گذرواژه :">
          <font>
             <Font size="16.0" />
          </font>
@@ -58,12 +58,22 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Button>
-      <JFXPasswordField fx:id="txtPassword" layoutX="154.0" layoutY="389.0" prefHeight="25.0" prefWidth="164.0" />
-      <JFXTextField fx:id="txtCode" layoutX="154.0" layoutY="472.0" prefHeight="25.0" prefWidth="164.0" />
-      <JFXTextField fx:id="txtUsername" layoutX="154.0" layoutY="312.0" prefHeight="25.0" prefWidth="164.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="154.0" layoutY="389.0" prefHeight="25.0" prefWidth="188.0" />
+      <JFXTextField fx:id="txtCode" layoutX="154.0" layoutY="472.0" prefHeight="25.0" prefWidth="188.0" />
+      <JFXTextField fx:id="txtUsername" layoutX="154.0" layoutY="312.0" prefHeight="25.0" prefWidth="188.0" />
       <ImageView fitHeight="26.0" fitWidth="90.0" layoutX="54.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@captcha.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="44.0" layoutX="506.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@useName.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="24.0" fitWidth="46.0" layoutX="497.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@password.jpg" />
          </image>
       </ImageView>
    </children>

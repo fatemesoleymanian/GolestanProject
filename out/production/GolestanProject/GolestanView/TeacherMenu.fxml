@@ -19,7 +19,10 @@
             <Font name="Arabic Typesetting" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="115.0" layoutY="52.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی" />
+      <Label layoutX="115.0" layoutY="52.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <Label layoutX="360.0" layoutY="52.0" text="سیستم جامع دانشگاهی گلستان ">
          <font>
             <Font name="System Bold" size="12.0" />

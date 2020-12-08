@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -11,18 +12,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Firstpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.FirstPage">
+<AnchorPane fx:id="Firstpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.FirstPage">
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
    <children>
       <Separator fx:id="sepUni" layoutX="7.0" layoutY="88.0" prefHeight="8.0" prefWidth="586.0" />
-      <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="150.0" prefHeight="88.0" prefWidth="552.0" text="گلستان" textFill="#d00d0d">
+      <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="116.0" prefHeight="88.0" prefWidth="552.0" text="گلستان" textFill="#d00d0d">
          <font>
             <Font name="B Elham" size="79.0" />
          </font>
       </Label>
-      <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="268.0" prefHeight="50.0" prefWidth="264.0" text="سیستم جامع دانشگاهی">
+      <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="204.0" prefHeight="50.0" prefWidth="264.0" text="سیستم جامع دانشگاهی">
          <font>
             <Font name="AdobeArabic-Regular" size="20.0" />
          </font>
@@ -32,7 +33,7 @@
             <Image url="@uniArm.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="entrancebtn" layoutX="231.0" layoutY="435.0" onAction="#pressentrancebtn" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم" underline="true">
+      <JFXButton fx:id="entrancebtn" layoutX="10.0" layoutY="100.0" onAction="#pressentrancebtn" prefHeight="50.0" prefWidth="187.0" text="ورود به سیستم" underline="true">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
@@ -50,5 +51,7 @@
             <DropShadow />
          </effect>
       </ImageView>
+      <JFXListView fx:id="notice1LV" layoutX="19.0" layoutY="295.0" opacity="0.77" prefHeight="147.0" prefWidth="563.0" style="-fx-background-color: #D3D3D3;" />
+      <JFXListView fx:id="notice2LV" layoutX="19.0" layoutY="467.0" prefHeight="156.0" prefWidth="563.0" style="-fx-background-color: #D3D3D3;" />
    </children>
 </AnchorPane>

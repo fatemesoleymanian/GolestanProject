@@ -1,6 +1,9 @@
 package GolestanController;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +19,8 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 
 public class FirstPage {
@@ -40,6 +45,16 @@ public class FirstPage {
     @FXML
     private Hyperlink contactUshyperlink;
 
+    @FXML
+    private JFXListView<String> notice1LV;
+
+    final ObservableList<String> noticeOneList= FXCollections.observableArrayList();
+
+    @FXML
+    private JFXListView<String> notice2LV;
+
+    final ObservableList<String> noticeTwoList= FXCollections.observableArrayList();
+
 
     @FXML
     public void pressHyperLink(ActionEvent actionEvent) {
@@ -62,5 +77,13 @@ public class FirstPage {
         primarystage.setScene(scene);
         primarystage.show();
     }
+
+    public void initialize()  {
+        //this method is for get notices from database and put it in two list view
+
+
+
+    }
+
 }
 
