@@ -57,8 +57,6 @@ public class EntrancePage implements Initializable {
     @FXML
     private JFXDatePicker date;
 
-    @FXML
-    private ImageView codeRandom;
 
     @FXML
     private Label code;
