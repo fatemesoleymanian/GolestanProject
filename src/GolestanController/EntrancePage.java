@@ -1,18 +1,34 @@
 package GolestanController;
 
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import javax.print.DocFlavor;
 import java.io.IOException;
 
-public class EntrancePage {
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
+import java.util.ResourceBundle;
+
+public class EntrancePage implements Initializable {
 
     @FXML
     private Button reseyStPassword;
@@ -36,12 +52,29 @@ public class EntrancePage {
     private JFXTextField txtUsername;
 
     @FXML
+    Label dateTime;
+
+    @FXML
+    private JFXDatePicker date;
+
+    @FXML
+    private ImageView codeRandom;
+
+    @FXML
+    private Label code;
+
+
+
+
+
+
+    @FXML
     void enterBtnPresss(ActionEvent event) throws IOException {
-        //gharare sharta baresi she ke inja bggim karmande ya daneshjo ya ostad inpaeini faght vase teste
+        //gharare sharta baresi she ke inja bggim karmande ya daneshjo ya ostad in paeini faght vase teste
         Stage stage = (Stage) enterBtn.getScene().getWindow();
         stage.close();
         Stage primarystage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/EmployeeMenu.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
         primarystage.setTitle("Golestan System");
         Scene scene = new Scene(root, 657, 870);
         primarystage.setScene(scene);
@@ -69,4 +102,43 @@ public class EntrancePage {
     }
 
 
+
+
+    private void initClock() {
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            dateTime.setText(LocalDateTime.now().format(formatter));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+
+    public void initDate(){
+        date.setValue(LocalDate.now());
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initClock();
+        initDate();
+        code.setText(randomForCode());
+
+
+    }
+    public String randomForCode(){
+        int begin = 97;
+        int end = 127;
+        int codeLength = 4;
+        Random random = new Random();
+        StringBuilder buffer = new StringBuilder(codeLength);
+        for (int i = 0; i < codeLength; i++) {
+            int randomLimitedInt = begin + (int)
+                    (random.nextFloat() * (end - begin + 1));
+            buffer.append((char) randomLimitedInt);
+        }
+        return buffer.toString();
+
+    }
 }

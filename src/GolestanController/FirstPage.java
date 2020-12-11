@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -19,11 +20,13 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ResourceBundle;
 
 
-public class FirstPage {
+public class FirstPage implements Initializable {
 
     @FXML
     private AnchorPane Firstpane;
@@ -78,12 +81,10 @@ public class FirstPage {
         primarystage.show();
     }
 
-    public void initialize()  {
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         //this method is for get notices from database and put it in two list view
-
-
-
     }
-
 }
 

@@ -1,9 +1,13 @@
 package GolestanController;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +17,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import javax.print.DocFlavor;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class TeacherMenu implements Initializable {
@@ -32,6 +41,13 @@ public class TeacherMenu implements Initializable {
     private VBox parent;
 
     @FXML
+    private JFXDatePicker date;
+
+    @FXML
+    Label dateTime;
+
+
+    @FXML
     void HamburgurOnMouseClicked(MouseEvent event) {
         hamburgerBackArrowBasicTransition.setRate(hamburgerBackArrowBasicTransition.getRate()* -1);
         hamburgerBackArrowBasicTransition.play();
@@ -45,8 +61,24 @@ public class TeacherMenu implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition=new HamburgerBackArrowBasicTransition(HamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
+        initDate();
+        initClock();
 
 
+    }
+    private void initClock() {
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            dateTime.setText(LocalDateTime.now().format(formatter));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+
+
+    public void initDate(){
+        date.setValue(LocalDate.now());
     }
     //main drawer for teachers
 

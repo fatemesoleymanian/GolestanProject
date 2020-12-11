@@ -1,8 +1,12 @@
 package GolestanController;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +17,9 @@ import javafx.util.Duration;
 import java.awt.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.io.IOException;
 import javafx.scene.control.Label;
@@ -49,6 +56,13 @@ public class StudentMenu implements Initializable {
     private JFXButton exitBtn;
     @FXML
     private VBox parent;
+
+    @FXML
+    private JFXDatePicker date;
+
+    @FXML
+    Label dateTime;
+
 
 
     @FXML
@@ -100,7 +114,22 @@ public class StudentMenu implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition=new HamburgerBackArrowBasicTransition(hamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
+        initDate();
+        initClock();
        // userNameLbl.setText(EntrancePage.);//esmesho bgir az db//ghesmate 12
+    }
+
+    private void initClock() {
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            dateTime.setText(LocalDateTime.now().format(formatter));
+        }), new KeyFrame(Duration.seconds(1)));
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+    public void initDate(){
+        date.setValue(LocalDate.now());
     }
 
     @FXML

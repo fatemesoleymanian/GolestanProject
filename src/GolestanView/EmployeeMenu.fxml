@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
@@ -19,11 +21,11 @@
                 <Font name="Arabic Typesetting" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="346.0" layoutY="42.0" text="سیستم جامع دانشگاهی گلستان ">
+        <Label layoutX="347.0" layoutY="61.0" text="سیستم جامع دانشگاهی گلستان ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-        <Label layoutX="115.0" layoutY="42.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
+        <Label layoutX="114.0" layoutY="61.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -35,7 +37,10 @@
         <JFXHamburger fx:id="hamburgurMenu" layoutX="562.0" layoutY="133.0" onMouseClicked="#hamburgurOnMouseClicked" prefHeight="46.0" prefWidth="68.0">
          <effect>
             <DropShadow color="STEELBLUE" height="35.82" radius="16.6675" width="32.85" />
-         </effect></JFXHamburger>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXHamburger>
       <VBox fx:id="employeeDrawer" layoutX="4.0" layoutY="120.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="264.0" style="-fx-background-color: #f5f5f5;" visible="false">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -113,5 +118,15 @@
          </effect>
       </VBox>
       <Separator layoutX="-2.0" layoutY="101.0" prefHeight="7.0" prefWidth="657.0" style="-fx-background-color: #4682b4;" />
+      <JFXDatePicker fx:id="date" defaultColor="NAVY" editable="false" layoutX="607.0" layoutY="13.0" prefHeight="25.0" prefWidth="29.0" showWeekNumbers="true" style="-jfx-default-color: #000000;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+      <Label fx:id="dateTime" layoutX="482.0" layoutY="17.0" prefHeight="17.0" prefWidth="132.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
