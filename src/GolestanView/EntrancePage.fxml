@@ -105,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXDatePicker>
-      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="480.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #000000;" textFill="FLORALWHITE">
+      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="480.0" opacity="0.6" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #000000;" text="kh" textFill="FLORALWHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
