@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -62,17 +63,26 @@ public class EntrancePage implements Initializable {
     private Label code;
 
 
-
+public static String userName ,password;//put txtpasword and txtuserName to them so u  can access them in this package!
 
 
 
     @FXML
     void enterBtnPresss(ActionEvent event) throws IOException {
+        if (txtCode.getText().compareTo("")==0||txtPassword.getText().compareTo("")==0||txtUsername.getText().compareTo("")==0){
+            Alert alert=new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("**هشدار**");
+            alert.setHeaderText(null);
+            alert.setContentText("لطفا تمامی فیلد ها را کامل کنید !");
+            alert.showAndWait();
+        }else {
+
+        }
         //gharare sharta baresi she ke inja bggim karmande ya daneshjo ya ostad in paeini faght vase teste
         Stage stage = (Stage) enterBtn.getScene().getWindow();
         stage.close();
         Stage primarystage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
         primarystage.setTitle("Golestan System");
         Scene scene = new Scene(root, 657, 870);
         primarystage.setScene(scene);
@@ -121,11 +131,11 @@ public class EntrancePage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         initClock();
         initDate();
-        code.setText(randomForCode());
+        code.setText(generateCode());
 
 
     }
-    public String randomForCode(){
+    public String generateCode(){
         int begin = 97;
         int end = 127;
         int codeLength = 4;

@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="762.0" prefWidth="600.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.EntrancePage">
    <children>
-      <ImageView fx:id="codeRandom" fitHeight="103.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="103.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@uniArm.png" />
          </image>
@@ -105,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXDatePicker>
-      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="480.0" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #000000;" textFill="FLORALWHITE">
+      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="480.0" opacity="0.6" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #000000;" textFill="FLORALWHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

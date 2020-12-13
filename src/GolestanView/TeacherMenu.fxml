@@ -52,7 +52,7 @@
                   <Insets left="60.0" top="10.0" />
                </VBox.margin>
             </ImageView>
-            <Label fx:id="teacherNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="271.0" text="teacher name">
+            <Label fx:id="teacherNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="271.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -91,7 +91,7 @@
             <DropShadow height="166.29" radius="75.23249999999999" width="136.64" />
          </effect>
       </VBox>
-      <VBox fx:id="StudentsDrawer" layoutX="268.0" layoutY="418.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="228.0" style="-fx-background-color: #FFFFFF;" visible="false">
+      <VBox fx:id="StudentsDrawer" layoutX="281.0" layoutY="416.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="228.0" style="-fx-background-color: #FFFFFF;" visible="false">
          <children>
             <JFXButton fx:id="saveANDeditScoresBtn" onAction="#PresssaveANDeditScoresBtn" prefHeight="33.0" prefWidth="240.0" text="ثبت و تغییر نمرات دانشجویان">
                <font>
@@ -122,7 +122,7 @@
             <DropShadow height="62.51" radius="31.497500000000002" width="65.48" />
          </effect>
       </VBox>
-      <VBox fx:id="teachersDrawer" layoutX="268.0" layoutY="308.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" visible="false">
+      <VBox fx:id="teachersDrawer" layoutX="281.0" layoutY="309.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
             <JFXButton fx:id="unitsBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PressunitsBtn" prefHeight="50.0" prefWidth="150.0" text="مشاهده دروس اساتید">
                <font>
@@ -145,7 +145,7 @@
             <DropShadow height="68.44" radius="33.72" width="68.44" />
          </effect>
       </VBox>
-      <VBox fx:id="EvaluateDrawer" layoutX="268.0" layoutY="550.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" visible="false">
+      <VBox fx:id="EvaluateDrawer" layoutX="281.0" layoutY="549.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" visible="false">
          <children>
             <JFXButton fx:id="studentEvaluBtn" onAction="#PressstudentEvaluBtn" prefHeight="49.0" prefWidth="224.0" text="مشاهده ارزشیابی دانشجویان">
                <font>

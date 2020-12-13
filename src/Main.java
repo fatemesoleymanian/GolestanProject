@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("GolestanView/FirstPage.fxml"));
         primaryStage.setTitle("Golestan System");
-        primaryStage.setScene(new Scene(root, 600, 586));
+        primaryStage.setScene(new Scene(root, 600, 680));
         primaryStage.show();
     }
 

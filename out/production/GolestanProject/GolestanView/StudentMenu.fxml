@@ -51,7 +51,7 @@
                   <Insets left="50.0" />
                </VBox.margin>
             </ImageView>
-            <Label fx:id="userNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="264.0" text="username" textFill="WHITE">
+            <Label fx:id="userNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="264.0" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -101,7 +101,7 @@
             <DropShadow height="104.02" radius="57.44" width="127.74" />
          </effect>
       </VBox>
-      <VBox fx:id="teachDrawer" layoutX="264.0" layoutY="325.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="119.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+      <VBox fx:id="teachDrawer" layoutX="271.0" layoutY="328.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="119.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
          <children>
             <JFXButton fx:id="TuitionBtn" alignment="TOP_CENTER" contentDisplay="TOP" onAction="#PressTuitionBtn" prefHeight="19.0" prefWidth="260.0" text="پرداخت شهریه" textFill="WHITE">
                <font>
@@ -128,7 +128,7 @@
             <DropShadow height="74.37" radius="50.77" width="130.71" />
          </effect>
       </VBox>
-      <VBox fx:id="officialDrawer" layoutX="264.0" layoutY="467.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="50.0" prefWidth="231.0" style="-fx-background-color: #000000;" visible="false">
+      <VBox fx:id="officialDrawer" layoutX="271.0" layoutY="466.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="50.0" prefWidth="231.0" style="-fx-background-color: #000000;" visible="false">
          <children>
             <JFXButton fx:id="checkOutBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PresscheckOutBtn" prefHeight="50.0" prefWidth="244.0" text="تسویه حساب دانشجویان" textFill="WHITE">
                <font>
@@ -140,7 +140,7 @@
             <DropShadow height="74.37" radius="38.167500000000004" width="80.3" />
          </effect>
       </VBox>
-      <VBox fx:id="registerDrawer" layoutX="264.0" layoutY="548.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+      <VBox fx:id="registerDrawer" layoutX="271.0" layoutY="549.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
          <children>
             <JFXButton fx:id="unitSelectionBtn" onAction="#PressunitSelectionBtn" prefHeight="34.0" prefWidth="262.0" text="انتخاب واحد دانشجویان" textFill="WHITE">
                <font>
@@ -157,7 +157,7 @@
             <DropShadow height="92.16" radius="50.0275" width="109.95" />
          </effect>
       </VBox>
-      <VBox fx:id="systemDrawer" layoutX="264.0" layoutY="639.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
+      <VBox fx:id="systemDrawer" layoutX="271.0" layoutY="639.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.83" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #000000;" visible="false">
          <children>
             <JFXButton fx:id="changePasswordBtn" onAction="#PresschangePasswordBtn" prefHeight="34.0" prefWidth="260.0" text="تغییر گذرواژه" textFill="WHITE" />
             <JFXButton fx:id="resetPasswordBtn" onAction="#PressresetPasswordBtn" prefHeight="35.0" prefWidth="260.0" text="تنظیمات بازیابی کلمه عبور" textFill="WHITE" />

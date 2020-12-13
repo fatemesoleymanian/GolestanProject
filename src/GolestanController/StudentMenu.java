@@ -174,30 +174,47 @@ public class StudentMenu implements Initializable {
 
     @FXML
     public void PressTuitionBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PresshalfReportBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PressfullReportBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PressfullInfoBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PresscheckOutBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PressunitSelectionBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PressemergencyLeaveBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
 
     public void PresschangePasswordBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
     }
     @FXML
     public void PressresetPasswordBtn(javafx.event.ActionEvent actionEvent) {
+        closeAutomated();
+    }
+
+    public void closeAutomated(){
+        parent.setVisible(false);
+        teachDrawer.setVisible(false);
+        officialDrawer.setVisible(false);
+        registerDrawer.setVisible(false);
+        systemDrawer.setVisible(false);
     }
 }
 

@@ -123,14 +123,16 @@ public class TeacherMenu implements Initializable {
 
     @FXML
     private JFXButton studentEvaluBtn;
-
+ //look if u want to be able to pass the right Stnum and pass make it final static i mean --->final static String Stnum=
 
 
 
     @FXML
     public void PressteachersBtn(ActionEvent actionEvent) {
-        if (teachersDrawer.isVisible()) { teachersDrawer.setVisible(false);}
+        if (teachersDrawer.isVisible()) { teachersDrawer.setVisible(false); }
         else{ teachersDrawer.setVisible(true); }
+        StudentsDrawer.setVisible(false);
+        EvaluateDrawer.setVisible(false);
 
     }
 
@@ -138,16 +140,20 @@ public class TeacherMenu implements Initializable {
 
     @FXML
     public void PressstudentsBtn(ActionEvent actionEvent) {
-        if (StudentsDrawer.isVisible()) { StudentsDrawer.setVisible(false);}
-        else{ StudentsDrawer.setVisible(true);}
+        if (StudentsDrawer.isVisible()) { StudentsDrawer.setVisible(false); }
+        else{ StudentsDrawer.setVisible(true); }
+        teachersDrawer.setVisible(false);
+        EvaluateDrawer.setVisible(false);
     }
 
 
 
     @FXML
     public void PressevaluatingBtn(ActionEvent actionEvent) {
-        if (EvaluateDrawer.isVisible()) { EvaluateDrawer.setVisible(false);}
+        if (EvaluateDrawer.isVisible()) { EvaluateDrawer.setVisible(false); }
         else{ EvaluateDrawer.setVisible(true); }
+        teachersDrawer.setVisible(false);
+        StudentsDrawer.setVisible(false);
 
     }
 
@@ -160,29 +166,43 @@ public class TeacherMenu implements Initializable {
     }
     @FXML
     void PressdeleteStudentBtn(ActionEvent event) {
+        closeAutomated();
+
 
     }
     @FXML
     void PressfeeBtn(ActionEvent event) {
+        closeAutomated();
 
     }
     @FXML
     void PresssaveANDeditScoresBtn(ActionEvent event) {
+        closeAutomated();
 
     }
 
     @FXML
     void PressstudentDescriptionBtn(ActionEvent event) {
+        closeAutomated();
 
     }
 
     @FXML
     void PressstudentEvaluBtn(ActionEvent event) {
+        closeAutomated();
 
     }
 
     @FXML
     public void PressunitsBtn(ActionEvent actionEvent) {
+        closeAutomated();
+    }
+
+    public void closeAutomated(){
+        parent.setVisible(false);
+        StudentsDrawer.setVisible(false);
+        teachersDrawer.setVisible(false);
+        EvaluateDrawer.setVisible(false);
     }
 }
 
