@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class EntrancePage implements Initializable {
+    //******** ALL COMPONENTS *****
 
     @FXML
     private Button reseyStPassword;
@@ -63,55 +65,10 @@ public class EntrancePage implements Initializable {
     private Label code;
 
 
-public static String userName ,password;//put txtpasword and txtuserName to them so u  can access them in this package!
+    public static String userName, password;
+    // TODO: 12/17/2020  put txtpasword and txtuserName to them so u  can access them in this package!
 
-
-
-    @FXML
-    void enterBtnPresss(ActionEvent event) throws IOException {
-        if (txtCode.getText().compareTo("")==0||txtPassword.getText().compareTo("")==0||txtUsername.getText().compareTo("")==0){
-            Alert alert=new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("**هشدار**");
-            alert.setHeaderText(null);
-            alert.setContentText("لطفا تمامی فیلد ها را کامل کنید !");
-            alert.showAndWait();
-        }else {
-
-        }
-        //gharare sharta baresi she ke inja bggim karmande ya daneshjo ya ostad in paeini faght vase teste
-        Stage stage = (Stage) enterBtn.getScene().getWindow();
-        stage.close();
-        Stage primarystage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
-        primarystage.setTitle("Golestan System");
-        Scene scene = new Scene(root, 657, 870);
-        primarystage.setScene(scene);
-        primarystage.show();
-
-
-
-    }
-//ba tavjoh be fieldaye db gharare tarahi she in dota dokmeye  paeini
-    @FXML
-    void exitBtnPress(ActionEvent event) {
-        Stage stage = (Stage) exitBtn.getScene().getWindow();
-        stage.close();
-
-    }
-
-    @FXML
-    void resetTePasswordPress(ActionEvent event) {
-
-    }
-
-    @FXML
-
-    public void resetStPasswordPress(ActionEvent actionEvent) {
-    }
-
-
-
-
+                        //********* PREPARE DATE AND TIME *******
     private void initClock() {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -122,11 +79,11 @@ public static String userName ,password;//put txtpasword and txtuserName to them
         clock.play();
     }
 
-    public void initDate(){
+    public void initDate() {
         date.setValue(LocalDate.now());
     }
 
-
+    //******* INITIALIZING *********
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initClock();
@@ -135,7 +92,9 @@ public static String userName ,password;//put txtpasword and txtuserName to them
 
 
     }
-    public String generateCode(){
+
+    //******* PREPARE CAPTCHA ********
+    public String generateCode() {
         int begin = 97;
         int end = 127;
         int codeLength = 4;
@@ -148,5 +107,86 @@ public static String userName ,password;//put txtpasword and txtuserName to them
         }
         return buffer.toString();
 
+    }
+
+                    //******   BUTTONS ON ACTIONS **********
+    @FXML
+    void enterBtnPresss(ActionEvent event) throws IOException {
+        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
+            alertToFill();        }
+        else {
+
+        }
+        // TODO: 12/18/2020
+        Stage stage = (Stage) enterBtn.getScene().getWindow();
+        stage.close();
+        Stage primarystage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/EmployeeMenu.fxml"));
+        primarystage.setTitle("Golestan System");
+        Scene scene = new Scene(root, 760, 900);
+        primarystage.setScene(scene);
+        primarystage.show();
+        // TODO: 12/17/2020  check what kind of being XD is the fucking person who wants to enter
+    }
+
+    @FXML
+    void exitBtnPress(ActionEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
+    void resetTePasswordPress(ActionEvent event) throws IOException {
+        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
+            alertToFill();
+        } else {
+            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010") && txtCode.getText().equals(code.getText())) {
+                Stage stage = (Stage) resetTePassword.getScene().getWindow();
+                stage.close();
+                Stage primarystage = new Stage();
+                AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
+                primarystage.setTitle("Golestan System");
+                Scene scene = new Scene(root, 760, 900);
+                primarystage.setScene(scene);
+                primarystage.show();
+            } else {
+                alertNoAccess(); }
+        }
+    }
+
+    @FXML
+
+    public void resetStPasswordPress(ActionEvent actionEvent) throws IOException {
+        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
+            alertToFill(); }
+        else {
+            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010") && txtCode.getText().equals(code.getText())) {
+                Stage stage = (Stage) reseyStPassword.getScene().getWindow();
+                stage.close();
+                Stage primarystage = new Stage();
+                AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
+                primarystage.setTitle("Golestan System");
+                Scene scene = new Scene(root, 760, 900);
+                primarystage.setScene(scene);
+                primarystage.show();
+            } else {
+                alertNoAccess(); }
+
+        }
+
+    }
+                        //****** ALERTS *********
+    public void alertNoAccess(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("**هشدار**");
+        alert.setHeaderText(null);
+        alert.setContentText("امکان دسترسی به این قسمت برای شما وجود ندارد !");
+        alert.showAndWait();
+    }
+    public static void alertToFill(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("**هشدار**");
+        alert.setHeaderText(null);
+        alert.setContentText("لطفا تمامی فیلد ها را کامل کنید !");
+        alert.showAndWait();
     }
 }

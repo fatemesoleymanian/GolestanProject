@@ -3,25 +3,32 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="StudentMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="657.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.EmployeeMenu">
+<AnchorPane fx:id="StudentMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="760.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.EmployeeMenu">
     <children>
-        <Label layoutX="294.0" text="به نام خدا">
+        <Label layoutX="358.0" layoutY="4.0" text="به نام خدا">
             <font>
                 <Font name="Arabic Typesetting" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="347.0" layoutY="61.0" text="سیستم جامع دانشگاهی گلستان ">
+        <Label layoutX="448.0" layoutY="61.0" text="سیستم جامع دانشگاهی گلستان ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -34,7 +41,7 @@
                 <Image url="@uniArm.png" />
             </image>
         </ImageView>
-        <JFXHamburger fx:id="hamburgurMenu" layoutX="562.0" layoutY="133.0" onMouseClicked="#hamburgurOnMouseClicked" prefHeight="46.0" prefWidth="68.0">
+        <JFXHamburger fx:id="hamburgurMenu" layoutX="663.0" layoutY="120.0" onMouseClicked="#hamburgurOnMouseClicked" prefHeight="46.0" prefWidth="68.0">
          <effect>
             <DropShadow color="STEELBLUE" height="35.82" radius="16.6675" width="32.85" />
          </effect>
@@ -51,7 +58,7 @@
                   <Insets left="57.0" top="10.0" />
                </VBox.margin>
             </ImageView>
-            <Label fx:id="empNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="264.0" text="emp name" textFill="NAVY">
+            <Label fx:id="empNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="264.0" textFill="NAVY">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -72,7 +79,7 @@
                   <DropShadow color="STEELBLUE" />
                </effect>
             </JFXButton>
-            <JFXButton fx:id="empReportBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PressempReportBtn" opacity="0.7" prefHeight="80.0" prefWidth="273.0" text="گزارش وضعیت اخیرا کارمندان" textFill="DEEPSKYBLUE">
+            <JFXButton fx:id="empReportBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PressempReportBtn" opacity="0.7" prefHeight="80.0" prefWidth="273.0" text="گزارش وضعیت اخیر کارمندان" textFill="DEEPSKYBLUE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -117,16 +124,393 @@
             <DropShadow color="STEELBLUE" height="200.21" radius="111.82" width="249.07" />
          </effect>
       </VBox>
-      <Separator layoutX="-2.0" layoutY="101.0" prefHeight="7.0" prefWidth="657.0" style="-fx-background-color: #4682b4;" />
-      <JFXDatePicker fx:id="date" defaultColor="NAVY" editable="false" layoutX="607.0" layoutY="13.0" prefHeight="25.0" prefWidth="29.0" showWeekNumbers="true" style="-jfx-default-color: #000000;">
+      <Separator layoutX="-2.0" layoutY="101.0" prefHeight="7.0" prefWidth="760.0" style="-fx-background-color: #4682b4;" />
+      <JFXDatePicker fx:id="date" defaultColor="NAVY" editable="false" layoutX="697.0" layoutY="13.0" prefHeight="25.0" prefWidth="29.0" showWeekNumbers="true" style="-jfx-default-color: #000000;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXDatePicker>
-      <Label fx:id="dateTime" layoutX="482.0" layoutY="17.0" prefHeight="17.0" prefWidth="132.0">
+      <Label fx:id="dateTime" layoutX="575.0" layoutY="17.0" prefHeight="17.0" prefWidth="132.0">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
+      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="666.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
+        <tabs>
+          <Tab fx:id="empFeeTab" disable="true" style="-fx-background-color: #00bfff;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="298.0" layoutY="543.0" onAction="#seeAmountOfFeeBtn" style="-fx-background-color: #000080;" text="مشاهده گزارش" textFill="DEEPSKYBLUE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <Pane fx:id="feePane" layoutX="122.0" layoutY="182.0" prefHeight="223.0" prefWidth="487.0" style="-fx-background-color: #000080;">
+                           <children>
+                              <Label layoutX="201.0" layoutY="67.0" prefHeight="46.0" prefWidth="224.0" text="حقوق دریافتی شما در ماه جاری :" textFill="WHITE">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="feAmountTxt" layoutX="114.0" layoutY="74.0" prefHeight="39.0" prefWidth="87.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="73.0" layoutY="74.0" prefHeight="39.0" prefWidth="40.0" text="ریال" textFill="WHITE">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="121.0" fitWidth="132.0" layoutX="599.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@employeeSalary.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow color="NAVY" height="74.37" radius="33.72" width="62.51" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+          <Tab fx:id="empLeaveTab" disable="true" style="-fx-background-color: #000080;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="73.0" layoutY="366.0" onAction="#askForBreakBtn" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #000080;" text="درخواست مرخصی" textFill="DEEPSKYBLUE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="29.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="reasonOfBreakTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="9.0" layoutY="124.0" prefHeight="91.0" prefWidth="700.0" promptText="علت مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="28.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="breakTimeTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="421.0" layoutY="274.0" prefHeight="75.0" prefWidth="283.0" promptText="مدت درخواستی مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="28.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane fx:id="reactionPane" layoutX="132.0" layoutY="493.0" prefHeight="98.0" prefWidth="547.0" style="-fx-background-color: #ffffff;" visible="false">
+                           <children>
+                              <Label layoutX="103.0" layoutY="34.0" text="نتیجه بررسی درخواست شما به زودی اعلام خواهد شد ." textFill="NAVY">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="29.0" fitWidth="27.0" layoutX="76.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@happyEmojie.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="96.0" fitWidth="122.0" layoutX="631.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@dayOff.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="empReportTab" disable="true" style="-fx-background-color: #00bfff;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="266.0" layoutY="568.0" onAction="#seeLastStateBtn" text="مشاهده گزارش" textFill="NAVY">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="27.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXListView fx:id="empLastStateLV" layoutX="68.0" layoutY="188.0" prefHeight="274.0" prefWidth="587.0" style="-fx-background-color: #000080;" visible="false" />
+                        <Label layoutX="136.0" layoutY="42.0" text="برای مشاهده وضعیت اخیر خود روی دکمه ی زیر کلیک کنید ." textFill="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="106.0" fitWidth="132.0" layoutX="625.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@report.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="empLoanTab" disable="true" style="-fx-background-color: #000080;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <MenuButton alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="498.0" layoutY="205.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="تعداد اقساط" textFill="NAVY">
+                          <items>
+                            <MenuItem fx:id="sixmonthsLoanITxt" mnemonicParsing="false" onAction="#askFor6monthsLoanItem" text="شش ماهه" />
+                            <MenuItem fx:id="oneYearLoanITxt" mnemonicParsing="false" onAction="#askFor1YearLoanItem" text="یکساله" />
+                              <MenuItem fx:id="eighteenmonthsLoanITxt" mnemonicParsing="false" onAction="#askFor18monthsLoanItem" text="هجده ماهه" />
+                          </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="23.0" />
+                           </font>
+                        </MenuButton>
+                        <JFXTextField fx:id="personToGauranteeTxt" alignment="CENTER_RIGHT" focusColor="NAVY" labelFloat="true" layoutX="26.0" layoutY="203.0" prefHeight="38.0" prefWidth="210.0" promptText="ضامن :" unFocusColor="NAVY">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="273.0" layoutY="365.0" onAction="#clickForLoanBtn" text="درخواست وام" textFill="NAVY">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <Pane fx:id="reactionPaneForLoan" layoutX="79.0" layoutY="484.0" prefHeight="98.0" prefWidth="547.0" style="-fx-background-color: #ffffff;" visible="false">
+                           <children>
+                              <Label layoutX="103.0" layoutY="34.0" text="نتیجه بررسی درخواست شما به زودی اعلام خواهد شد ." textFill="NAVY">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="29.0" fitWidth="27.0" layoutX="76.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@happyEmojie.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <MenuButton alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="265.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="مبلغ وام درخواستی" textFill="NAVY">
+                           <items>
+                              <MenuItem fx:id="fivemillionLoanITxt" mnemonicParsing="false" onAction="#askFor5millionLoanItem" text="5 میلیون تومان" />
+                              <MenuItem fx:id="tenmillionLoanITxt" mnemonicParsing="false" onAction="#askFor10millionLoanItem" text="10 میلیون تومان" />
+                              <MenuItem fx:id="twelvemillionLoanITxt" mnemonicParsing="false" onAction="#askFor12millionLoanItem" text="12 میلیون تومان" />
+                           </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="23.0" />
+                           </font>
+                        </MenuButton>
+                        <ImageView fitHeight="115.0" fitWidth="132.0" layoutX="599.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@loan.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="empDocTab" disable="true" style="-fx-background-color: #00bfff;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="59.0" layoutY="58.0" onAction="#clickToSaveDocBtn" text="ثبت سند " textFill="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="27.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="docTypeTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="264.0" layoutY="47.0" promptText="نوع سند :" unFocusColor="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="docNumTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="264.0" layoutY="131.0" promptText="شماره سند :" unFocusColor="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="302.0" layoutY="528.0" onAction="#clickToSeeMyDocs" text="مشاهده اسناد ثبت شده" textFill="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXListView fx:id="docsLV" layoutX="137.0" layoutY="252.0" prefHeight="263.0" prefWidth="499.0" style="-fx-background-color: #000080;" visible="false" />
+                        <Label fx:id="sayDocSavedTxt" alignment="CENTER" layoutX="45.0" layoutY="131.0" prefHeight="29.0" prefWidth="158.0" style="-fx-background-color: #000080;" textFill="WHITE" underline="true" visible="false">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="117.0" layoutX="614.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@selection.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="71.41" radius="34.4625" width="68.44" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="empInfoTab" disable="true" style="-fx-background-color: #000080;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="189.0" layoutY="48.0" onAction="#saveInfoBtn" prefHeight="48.0" prefWidth="353.0" style="-fx-background-radius: 6.0;" text="اعمال تغییرات" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="663.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Form_Help.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="203.0" layoutY="16.0" text="در این قسمت میتوانید به ثبت و ویرایش اطلاعات خود در سیستم بپردازید ." textFill="WHITE">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="577.0" fitWidth="611.0" layoutX="77.0" layoutY="96.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@employee.jpg" />
+                           </image>
+                           <effect>
+                              <DropShadow height="190.01" radius="101.1775" width="216.7" />
+                           </effect>
+                        </ImageView>
+                        <JFXTextField fx:id="empNameTxt" alignment="CENTER_RIGHT" editable="false" focusColor="FLORALWHITE" layoutX="321.0" layoutY="106.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="542.0" layoutY="127.0" text="نام و نام خانوادگی :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="548.0" layoutY="187.0" text="شماره کارمند :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="empNumTxt" alignment="CENTER_RIGHT" editable="false" focusColor="FLORALWHITE" layoutX="321.0" layoutY="167.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="554.0" layoutY="246.0" text="تاریخ تولد :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="556.0" layoutY="310.0" text="نام پدر :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="empBirthdateTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="225.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="empFatherNameTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="289.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="549.0" layoutY="374.0" text="شماره شناسنامه :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="556.0" layoutY="436.0" text="کد ملی :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="empIdTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="355.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="empNationalCodeTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="415.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="559.0" layoutY="501.0" text="تلفن همراه :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="532.0" layoutY="569.0" text="آدرس پست الکترونیکی :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <MenuButton layoutX="101.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="دین">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#clickIslamBtn" text="اسلام" />
+                            <MenuItem mnemonicParsing="false" onAction="#cliickKalimiBtn" text="کلیمی" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickZoroastrianBtn" text="زرتشتی" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickChristianBtn" text="مسیحی" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickOthersReligion" text="سایر" />
+                          </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="16.0" />
+                           </font>
+                        </MenuButton>
+                        <MenuButton layoutX="101.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="تابعیت">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#clickIraniBtn" text="ایرانی" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickForeignBtn" text="غیر ایرانی" />
+                           </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="16.0" />
+                           </font>
+                        </MenuButton>
+                        <Label layoutX="582.0" layoutY="624.0" text="آدرس :" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="19.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="empAddressTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="115.0" layoutY="603.0" prefHeight="42.0" prefWidth="436.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <MenuButton layoutX="101.0" layoutY="122.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="وضعیت نظام وظیفه">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#clickUndefiendMilitaryBtn" text="عدم شمول" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickDoneMilitaryBtn" text="خدمت کرده" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickInProgressMilitaryBtn" text="در حال خدمت" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickNoNeedMilitaryBtn" text="معافیت دائم" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickOthersMilitaryBtn" text="سایر" />
+                           </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="16.0" />
+                           </font>
+                        </MenuButton>
+                        <MenuButton layoutX="101.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="تحصیلات">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#clickHighSchoolBtn" text="زیر دیپلم" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickDiplomaBtn" text="دیپلم" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickAssociateDegreeBtn" text="فوق دیپلم" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickBachelorBtn" text="لیسانس" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickMABtn" text="فوق لیسانس" />
+                           </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="16.0" />
+                           </font>
+                        </MenuButton>
+                        <JFXTextField fx:id="empPhoneNumTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="320.0" layoutY="480.0" prefHeight="42.0" prefWidth="208.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <MenuButton layoutX="101.0" layoutY="415.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="وضعیت تاهل">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#clickSingleBtn" text="مجرد" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickMarriedBtn" text="متاهل" />
+                           </items>
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="16.0" />
+                           </font>
+                        </MenuButton>
+                        <JFXTextField fx:id="empEmailTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="307.0" layoutY="548.0" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                     </children></AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
     </children>
 </AnchorPane>

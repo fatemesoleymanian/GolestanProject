@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 
 
 public class FirstPage implements Initializable {
-
+                //********* ALL COMPONENTS *******
     @FXML
     private AnchorPane Firstpane;
 
@@ -58,7 +58,7 @@ public class FirstPage implements Initializable {
 
     final ObservableList<String> noticeTwoList= FXCollections.observableArrayList();
 
-
+                        //******* GO TO WWW.USC.AC.IR BY CLICK ON HYPERLINK ****
     @FXML
     public void pressHyperLink(ActionEvent actionEvent) {
         try {
@@ -69,6 +69,7 @@ public class FirstPage implements Initializable {
             e.printStackTrace();
         }
     }
+                        //****** GET INTO THE SYSTEM ********
     @FXML
     public void pressentrancebtn(ActionEvent actionEvent) throws IOException {
         Stage stage=(Stage) entrancebtn.getScene().getWindow();
@@ -79,12 +80,14 @@ public class FirstPage implements Initializable {
         Scene scene=new Scene(root,600,762);
         primarystage.setScene(scene);
         primarystage.show();
-    }
 
+    }
+                            //******* INITIALIZING *********
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //this method is for get notices from database and put it in two list view
+
+        // TODO: 12/17/2020 this method is for get notices from database and put it in two list view
     }
 }
 
