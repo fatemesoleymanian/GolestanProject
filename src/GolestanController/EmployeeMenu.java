@@ -126,6 +126,8 @@ public class EmployeeMenu implements Initializable {
         initDate();
         initClock();
         // TODO: 12/18/2020 feAmountTxt.setText();
+        // TODO: 12/22/2020    empNameLbl.setText(az db bgir);
+
     }
     private void initClock() {
 

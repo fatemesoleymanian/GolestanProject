@@ -121,7 +121,7 @@ public class EntrancePage implements Initializable {
             Stage stage = (Stage) enterBtn.getScene().getWindow();
             stage.close();
             Stage primarystage = new Stage();
-            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
+            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
             primarystage.setTitle("Golestan System");
             Scene scene = new Scene(root, 760, 900);
             primarystage.setScene(scene);

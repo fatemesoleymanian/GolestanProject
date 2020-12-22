@@ -53,37 +53,19 @@ public class TeacherMenu implements Initializable {
     private Label teacherNameLbl;
 
     @FXML
-    private JFXButton teachersBtn;
-
-    @FXML
-    private JFXButton studentsBtn;
-
-    @FXML
-    private JFXButton evaluatingBtn;
-
-    @FXML
-    private JFXButton exitBtn;
+    private JFXButton teachersBtn , studentsBtn ,evaluatingBtn ,exitBtn;
 
     @FXML
     private VBox StudentsDrawer;
 
     @FXML
-    private JFXButton saveANDeditScoresBtn;
-
-    @FXML
-    private JFXButton deleteStudentBtn;
-
-    @FXML
-    private JFXButton studentDescriptionBtn;
+    private JFXButton saveANDeditScoresBtn,deleteStudentBtn,studentDescriptionBtn;
 
     @FXML
     private VBox teachersDrawer;
 
     @FXML
-    private JFXButton unitsBtn;
-
-    @FXML
-    private JFXButton feeBtn;
+    private JFXButton unitsBtn,feeBtn;
 
     @FXML
     private VBox EvaluateDrawer;
@@ -92,51 +74,16 @@ public class TeacherMenu implements Initializable {
     private JFXButton studentEvaluBtn;
 
     @FXML
-    private Tab unitsTab;
-
-    @FXML
-    private Tab feeTab;
-
-    @FXML
-    private Tab saveANDeditScoresTab;
-
-    @FXML
-    private Tab deleteStudenTab;
-
-    @FXML
-    private Tab studentDescriptionTab;
-
-    @FXML
-    private Tab studentEvaluTab;
+    private Tab unitsTab,feeTab,saveANDeditScoresTab,deleteStudenTab,studentDescriptionTab,studentEvaluTab;
 
 
     @FXML
     private TabPane tabs;
 
     @FXML
-    private JFXTextField stNameForChangeScoreTxt;
-
-    @FXML
-    private JFXTextField StIdForChangeScoreTxt;
-
-    @FXML
-    private JFXTextField StUnitCodeForChangeScoreTxt;
-
-    @FXML
-    private JFXTextField StScoreForChangeScoreTxt;
-
-    @FXML
-    private JFXTextField deleteTimeTxt;
-
-    @FXML
-    private JFXTextField ReasonOfDeleteTxt;
-
-
-    @FXML
-    private JFXTextField stNameForDeleteTxt;
-
-    @FXML
-    private JFXTextField StIdForDeleteTxt;
+    private JFXTextField stNameForChangeScoreTxt,StIdForChangeScoreTxt,StUnitCodeForChangeScoreTxt,
+            StScoreForChangeScoreTxt,deleteTimeTxt, ReasonOfDeleteTxt,stNameForDeleteTxt,
+            StIdForDeleteTxt;
 
     @FXML
     private JFXListView<String > studentDescriptionLV;
@@ -144,13 +91,7 @@ public class TeacherMenu implements Initializable {
     final ObservableList<String> studentDescriptionForTeacher= FXCollections.observableArrayList();
 
     @FXML
-    private JFXTextField stNameforDescriptionTxt;
-
-    @FXML
-    private JFXTextField stIdForDescriptionTxt;
-
-    @FXML
-    private JFXTextField stCodeUnitForDescriptionTxt;
+    private JFXTextField stNameforDescriptionTxt,stIdForDescriptionTxt,stCodeUnitForDescriptionTxt;
 
     @FXML
     private JFXListView<String > teacherUnitsLv;
@@ -168,9 +109,6 @@ public class TeacherMenu implements Initializable {
     @FXML
     private Label satisfiedPercentTxt;
 
-    @FXML
-    private Label percentMeaningTxt;
-
                         //********** TO PLAY THE TEACHER MENU ***********
     @FXML
     void HamburgurOnMouseClicked(MouseEvent event) {
@@ -179,6 +117,7 @@ public class TeacherMenu implements Initializable {
         if (parent.isVisible()) { parent.setVisible(false);}
         else{ parent.setVisible(true); }
         tabs.setVisible(false);
+        // TODO: 12/22/2020    teacherNameLbl.setText(az db bgir);
 
 
     }
@@ -189,6 +128,7 @@ public class TeacherMenu implements Initializable {
         hamburgerBackArrowBasicTransition.setRate(-1);
         initDate();
         initClock();
+        // TODO: 12/22/2020 satisfiedPercentTxt.setText(az db bgir);
 
         // TODO: 12/17/2020 add LVs don't forget!
     }
@@ -196,7 +136,7 @@ public class TeacherMenu implements Initializable {
     private void initClock() {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd   HH:mm:ss");
             dateTime.setText(LocalDateTime.now().format(formatter));
         }), new KeyFrame(Duration.seconds(1)));
         clock.setCycleCount(Animation.INDEFINITE);
@@ -208,7 +148,7 @@ public class TeacherMenu implements Initializable {
     }
 
     // TODO: 12/17/2020  look if u want to be able to pass the right Stnum and pass make it final static i mean --->final static String Stnum= or u can
-    // TODO: 12/17/2020 get those by passing throw the methods
+    // TODO: 12/17/2020 get those by passing throught the methods
 
                     //******** ALL ACTIONS *******
                     //******** MENU BUTTONS ******
@@ -233,9 +173,7 @@ public class TeacherMenu implements Initializable {
         else{ EvaluateDrawer.setVisible(true); }
         teachersDrawer.setVisible(false);
         StudentsDrawer.setVisible(false);
-
     }
-
     @FXML
     public void pressexitBtn(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) exitBtn.getScene().getWindow();
@@ -248,6 +186,7 @@ public class TeacherMenu implements Initializable {
         primarystage.show();
     }
                                 //******** CLOSE AND OPEN SMOOTHLY *******
+
     @FXML
     void PressdeleteStudentBtn(ActionEvent event) {
         closeAutomated();
@@ -321,27 +260,51 @@ public class TeacherMenu implements Initializable {
         teachersDrawer.setVisible(false);
         EvaluateDrawer.setVisible(false);
     }
-                                    //******* TABS BUTTONS ********
+                        //******* TABS BUTTONS ********
     @FXML
     public void pressSaveScoreBtn(ActionEvent actionEvent) {
+        if (stNameForChangeScoreTxt.getText().compareTo("")==0 || StIdForChangeScoreTxt.getText().length()!=9
+        || StUnitCodeForChangeScoreTxt.getText().compareTo("")==0 ||StScoreForChangeScoreTxt.getText().compareTo("")==0)
+        {
+            EntrancePage.alertToFill();
+        }else {
+            // TODO: 12/22/2020 dar db update kn
+        }
     }
 
     @FXML
     public void pressDeleteStudentBtn(ActionEvent actionEvent) {
+        if (stNameForDeleteTxt.getText().compareTo("")==0 || StIdForDeleteTxt.getText().length()!=9 ||
+        deleteTimeTxt.getText().compareTo("")==0 || ReasonOfDeleteTxt.getText().compareTo("")==0)
+        {
+            EntrancePage.alertToFill();
+        }else {
+            // TODO: 12/22/2020 fght hmon daneshjoo haz she oon termesh na inke khode daneshjo hzf she
+        }
     }
 
     @FXML
     public void pressObserveStudentBtn(ActionEvent actionEvent) {
-        studentDescriptionLV.setVisible(true);
+        if (stNameforDescriptionTxt.getText().compareTo("")==0 || stIdForDescriptionTxt.getText().length()!=9
+        || stCodeUnitForDescriptionTxt.getText().compareTo("")==0)
+        {
+            EntrancePage.alertToFill();
+        }else {
+            // TODO: 12/22/2020 listesho select kn hminja
+            studentDescriptionLV.setVisible(true);
+        }
     }
+
     @FXML
     public void pressToSeeTeacherUnitsBtn(ActionEvent actionEvent) {
         teacherUnitsLv.setVisible(true);
     }
+
     @FXML
     public void pressToSeeFeeBtn(ActionEvent actionEvent) {
         teacherFeeLV.setVisible(true);
     }
+
     @FXML
     public void pressToSeeEvaluationBtn(ActionEvent actionEvent) {
         resultOfSatisfactionPane.setVisible(true);

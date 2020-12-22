@@ -210,6 +210,7 @@ public class StudentMenu implements Initializable {
         initClock();
         code.setText(generateCode());
         access();
+        // TODO: 12/22/2020  userNameLbl.setText(az db)
 
     }
                   //********* PREPARE DATE AND TIME *******
