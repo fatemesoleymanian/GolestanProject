@@ -47,20 +47,8 @@ public class StudentMenu implements Initializable {
     private Label userNameLbl;
 
     @FXML
-    private JFXButton TeachingBtn;
+    private JFXButton TeachingBtn , officalBtn , registerBtn , systemBtn , exitBtn;
 
-    @FXML
-    private JFXButton officalBtn;
-
-    @FXML
-    private JFXButton registerBtn;
-
-
-    @FXML
-    private JFXButton systemBtn;
-
-    @FXML
-    private JFXButton exitBtn;
     @FXML
     private VBox parent;
 
@@ -68,52 +56,20 @@ public class StudentMenu implements Initializable {
     private JFXDatePicker date;
 
     @FXML
-    Label dateTime;
+    private Label dateTime;
 
     @FXML
     private TabPane tabs;
 
     @FXML
-    private Tab TuitionTab;
-
-    @FXML
-    private Tab halfReportTab;
-
-    @FXML
-    private Tab fullReportTab;
-
-    @FXML
-    private Tab fullInfoTab;
-
-    @FXML
-    private Tab checkOutTab;
-
-    @FXML
-    private Tab unitSelectionTab;
-
-    @FXML
-    private Tab emergencyLeaveTab;
-
-    @FXML
-    private Tab changePasswordTab;
-
-    @FXML
-    private Tab resetPasswordTab;
+    private Tab TuitionTab , halfReportTab , fullReportTab , fullInfoTab , checkOutTab , unitSelectionTab ,
+            emergencyLeaveTab , changePasswordTab , resetPasswordTab;
 
     @FXML
     private VBox teachDrawer;
 
     @FXML
-    private JFXButton TuitionBtn;
-
-    @FXML
-    private JFXButton halfReportBtn;
-
-    @FXML
-    private JFXButton fullReportBtn;
-
-    @FXML
-    private JFXButton fullInfoBtn;
+    private JFXButton TuitionBtn , halfReportBtn , fullReportBtn , fullInfoBtn;
 
     @FXML
     private VBox officialDrawer;
@@ -125,31 +81,24 @@ public class StudentMenu implements Initializable {
     private VBox registerDrawer;
 
     @FXML
-    private JFXButton unitSelectionBtn;
-
-    @FXML
-    private JFXButton emergencyLeaveBtn;
+    private JFXButton unitSelectionBtn , emergencyLeaveBtn;
 
     @FXML
     private VBox systemDrawer;
 
     @FXML
-    private JFXButton changePasswordBtn;
-
-    @FXML
-    private JFXButton resetPasswordBtn;
+    private JFXButton changePasswordBtn , resetPasswordBtn;
 
     @FXML
     private Label code;
 
     @FXML
-    private JFXTextField cardNumberTxt;
+    private JFXTextField cardNumberTxt , txtCode , TuitionTxt ,cvv2Txt,expireP2Txt,expireP1Txt;
 
     @FXML
-    private JFXTextField txtCode;
-
+    private JFXPasswordField secodPassForCardTxt;
     @FXML
-    private JFXTextField TuitionTxt;
+    private Pane resultPayPane;
 
     @FXML
     private JFXListView<String > halfReportLV;
@@ -177,49 +126,11 @@ public class StudentMenu implements Initializable {
     final ObservableList<String> showAllRelatedUnits= FXCollections.observableArrayList();
 
     @FXML
-    private TextField unit6Txt;
+    private TextField unit6Txt , unit1Txt , unit2Txt , unit7Txt , unit3Txt , unit4Txt , unit5Txt ,
+            unit8Txt , unit9Txt , unit10Txt;
 
     @FXML
-    private TextField unit1Txt;
-
-    @FXML
-    private TextField unit2Txt;
-
-    @FXML
-    private TextField unit7Txt;
-
-    @FXML
-    private TextField unit3Txt;
-
-    @FXML
-    private TextField unit4Txt;
-
-    @FXML
-    private TextField unit5Txt;
-
-    @FXML
-    private TextField unit8Txt;
-
-    @FXML
-    private TextField unit9Txt;
-
-    @FXML
-    private TextField unit10Txt;
-
-    @FXML
-    private JFXTextField emergencyLeaveReasonTxt;
-
-    @FXML
-    private JFXTextField deletedTemTxt;
-
-    @FXML
-    private JFXTextField oldPassTxt;
-
-    @FXML
-    private JFXTextField newPassTxt;
-
-    @FXML
-    private JFXTextField confirmNewPassTxt;
+    private JFXTextField emergencyLeaveReasonTxt , deletedTemTxt , oldPassTxt , newPassTxt ,confirmNewPassTxt;
 
     @FXML
     private Label disableToAccessLbl;
@@ -229,6 +140,9 @@ public class StudentMenu implements Initializable {
 
     @FXML
     private JFXTextField stIdTxt;
+
+    @FXML
+    private Label loadBackPassTxt;
 
 
 
@@ -258,7 +172,6 @@ public class StudentMenu implements Initializable {
         officialDrawer.setVisible(false);
         teachDrawer.setVisible(false);
     }
-
     @FXML
     public void systemPressBtn(javafx.event.ActionEvent actionEvent) {
         if (systemDrawer.isVisible()) { systemDrawer.setVisible(false);}
@@ -299,7 +212,7 @@ public class StudentMenu implements Initializable {
         access();
 
     }
-                //********* PREPARE DATE AND TIME *******
+                  //********* PREPARE DATE AND TIME *******
     private void initClock() {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -312,7 +225,8 @@ public class StudentMenu implements Initializable {
     public void initDate(){
         date.setValue(LocalDate.now());
     }
-            //******** CLOSE AND OPEN SMOOTHLY *******
+
+                    //******** CLOSE AND OPEN SMOOTHLY *******
     @FXML
     public void PressTuitionBtn(javafx.event.ActionEvent actionEvent) {
         closeAutomated();
@@ -340,7 +254,6 @@ public class StudentMenu implements Initializable {
         emergencyLeaveTab.setDisable(true);
         changePasswordTab.setDisable(true);
         resetPasswordTab.setDisable(true);
-
     }
     @FXML
     public void PressfullReportBtn(javafx.event.ActionEvent actionEvent) {
@@ -412,7 +325,7 @@ public class StudentMenu implements Initializable {
         changePasswordTab.setDisable(true);
         resetPasswordTab.setDisable(true);
     }
-
+    @FXML
     public void PresschangePasswordBtn(javafx.event.ActionEvent actionEvent) {
         closeAutomated();
         tabs.setVisible(true);
@@ -448,11 +361,11 @@ public class StudentMenu implements Initializable {
         registerDrawer.setVisible(false);
         systemDrawer.setVisible(false);
     }
-            //******* PREPARE CAPTCHA ********
+                      //******* PREPARE CAPTCHA ********
 
     public String generateCode(){
         int begin = 97;
-        int end = 127;
+        int end = 122;
         int codeLength = 4;
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(codeLength);
@@ -462,42 +375,61 @@ public class StudentMenu implements Initializable {
             buffer.append((char) randomLimitedInt);
         }
         return buffer.toString();
-
     }
-                   //****** TABS BUTTONS *****
+                     //****** TABS BUTTONS *****
     @FXML
     public void pressPayBtn(ActionEvent actionEvent) {
+        // TODO: 12/21/2020 1) TuitionTxt.setText(meghdari ke az shahriash moonde); inja na ha to initialize
+        if (TuitionTxt.getText().compareTo("") == 0 || cardNumberTxt.getText().length() != 16 ||
+                txtCode.getText() != code.getText() || secodPassForCardTxt.getText().length() < 5 ||
+                cvv2Txt.getText().length() != 3 || expireP1Txt.getText().length() != 2 || expireP2Txt.getText().length() != 2) {
+            EntrancePage.alertToFill();
+        } else {
+            // TODO: 12/21/2020 3)fght TuitionTxt.getText(); va cardNumberTxt.getText();  vatxtCode.getText(); ro bgiro update kn bghiash lazem nista
+       resultPayPane.setVisible(true);
+        }
     }
+
     @FXML
     public void pressToSeeHalfReportUnitsBtn(ActionEvent actionEvent) {
         halfReportLV.setVisible(true);
+        // TODO: 12/21/2020 ggozareshe nim sal bere to listesh
     }
+
     @FXML
     public void pressToSeeFullReportUnitsBtn(ActionEvent actionEvent) {
         fullReportLV.setVisible(true);
+        // TODO: 12/21/2020 ggozareshe kole sal bere to listesh
+
     }
+
     @FXML
     public void pressToSeeFullInfoBtn(ActionEvent actionEvent) {
         fullInfoLV.setVisible(true);
+        // TODO: 12/21/2020 moadele har sal+ cose term+tedade vahed bere to listesh
+
     }
+
     @FXML
     public void pressengeenUniItem(ActionEvent actionEvent) {
         unitsLV.setVisible(true);
-        // TODO: 12/17/2020 doroose fani mohandesi add she 
+        // TODO: 12/17/2020 doroose fani mohandesi add she to listesh
     }
     @FXML
     public void pressEnsaniUniItem(ActionEvent actionEvent) {
         unitsLV.setVisible(true);
-        // TODO: 12/17/2020 doroose ensani  add she 
+        // TODO: 12/17/2020 doroose ensani  add she to listesh
     }
     @FXML
     public void pressArtUniItem(ActionEvent actionEvent) {
         unitsLV.setVisible(true);
-        // TODO: 12/17/2020 doroose honar  add she 
+        // TODO: 12/17/2020 doroose honar  add she to listesh
     }
     @FXML
     public void saveSelectedUnitsBtn(ActionEvent actionEvent) {
-        // TODO: 12/17/2020 check va insert oonayi ke entekhab shde 
+        // TODO: 12/17/2020 check va insert oonayi ke entekhab shde
+        // TODO: 12/21/2020 har kofom null nis bayad bere to select esmesho select kne bede be inja ke smesh settext she agar asan to code ha nist begim
+
     }
     @FXML
     public void deleteSelectedUnitsBtn(ActionEvent actionEvent) {
@@ -515,19 +447,32 @@ public class StudentMenu implements Initializable {
     }
     @FXML
     public void deleteTheTermBtn(ActionEvent actionEvent) {
-        // TODO: 12/18/2020 check and delete student term from db
+        if (emergencyLeaveReasonTxt.getText().compareTo("")==0 || deletedTemTxt.getText().compareTo("")==0)
+        {
+            EntrancePage.alertToFill();
+        }else {
+            // TODO: 12/18/2020  delete student term from db
+        }
     }
     @FXML
     public void saveNewPassBtn(ActionEvent actionEvent) {
-        // TODO: 12/18/2020 check and update the password for student
+        // TODO: 12/21/2020 oon pasi ke bahash vared shdro bgir az entrance oldPassTxt.getText().equals(passe onjayo)
+        // TODO: 12/21/2020  if (newPassTxt.getText()!=confirmNewPassTxt.getText() || newPassTxt.getText().compareTo("")==0
+        //|| confirmNewPassTxt.getText().compareTo("")==0)
+        //{
+            //EntrancePage.alertToFill();}
+        // TODO: 12/18/2020  else{ update the password for student}
     }
     @FXML
     public void findLostPassBtn(ActionEvent actionEvent) {
-        // TODO: 12/18/2020 oon field hayi ke be karbar neshon nmidim alaki migim hazf shd
+        // TODO: 12/21/2020  stIdTxt.getText() ro bede be repo
+        // TODO: 12/18/2020 oon field hayi ke be karbar neshon nmidim alaki migim hazf shd ro select kn
+        loadBackPassTxt.setVisible(true);
+        // TODO: 12/21/2020   loadBackPassTxt.setText(natijeye select);
     }
 
     public void access(){
-        // TODO: 12/18/2020   if (stId==010101010 && stPass==010101010){
+        // TODO: 12/18/2020   dobare inja bayad username o passo bgiri az entrance page :if (stId==010101010 && stPass==010101010){
         accessablePaneForBoss.setVisible(true);
         // TODO: 12/18/2020 els {
         disableToAccessLbl.setVisible(true);
@@ -535,7 +480,9 @@ public class StudentMenu implements Initializable {
     @FXML
     public void clickOnPayPic(MouseEvent mouseEvent) {
         TuitionTab.setDisable(false);
+        // TODO: 12/21/2020 checkOutLV to initialize por she ke hamon pardakhtaye karbare
     }
+
 }
 
 

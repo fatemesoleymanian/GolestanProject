@@ -72,7 +72,7 @@ public class EntrancePage implements Initializable {
     private void initClock() {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
             dateTime.setText(LocalDateTime.now().format(formatter));
         }), new KeyFrame(Duration.seconds(1)));
         clock.setCycleCount(Animation.INDEFINITE);
@@ -96,7 +96,7 @@ public class EntrancePage implements Initializable {
     //******* PREPARE CAPTCHA ********
     public String generateCode() {
         int begin = 97;
-        int end = 127;
+        int end = 122;
         int codeLength = 4;
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(codeLength);
@@ -112,21 +112,23 @@ public class EntrancePage implements Initializable {
                     //******   BUTTONS ON ACTIONS **********
     @FXML
     void enterBtnPresss(ActionEvent event) throws IOException {
-        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
+
+        if (!(txtCode.getText().equals(code.getText()))|| txtPassword.getText().compareTo(" ") == 0 || txtUsername.getText().compareTo(" ") == 0) {
             alertToFill();        }
         else {
 
+            // TODO: 12/18/2020
+            Stage stage = (Stage) enterBtn.getScene().getWindow();
+            stage.close();
+            Stage primarystage = new Stage();
+            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
+            primarystage.setTitle("Golestan System");
+            Scene scene = new Scene(root, 760, 900);
+            primarystage.setScene(scene);
+            primarystage.show();
+            // TODO: 12/17/2020  check what kind of being XD is the fucking person who wants to enter
         }
-        // TODO: 12/18/2020
-        Stage stage = (Stage) enterBtn.getScene().getWindow();
-        stage.close();
-        Stage primarystage = new Stage();
-        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/EmployeeMenu.fxml"));
-        primarystage.setTitle("Golestan System");
-        Scene scene = new Scene(root, 760, 900);
-        primarystage.setScene(scene);
-        primarystage.show();
-        // TODO: 12/17/2020  check what kind of being XD is the fucking person who wants to enter
+
     }
 
     @FXML
@@ -186,7 +188,7 @@ public class EntrancePage implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("**هشدار**");
         alert.setHeaderText(null);
-        alert.setContentText("لطفا تمامی فیلد ها را کامل کنید !");
+        alert.setContentText("لطفا تمامی فیلد ها را پر و به درستی کامل کنید !");
         alert.showAndWait();
     }
 }

@@ -135,7 +135,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="666.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
+      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="672.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
         <tabs>
           <Tab fx:id="empFeeTab" disable="true" style="-fx-background-color: #00bfff;">
                <content>
@@ -146,7 +146,7 @@
                               <Font name="AdobeArabic-Bold" size="30.0" />
                            </font>
                         </JFXButton>
-                        <Pane fx:id="feePane" layoutX="122.0" layoutY="182.0" prefHeight="223.0" prefWidth="487.0" style="-fx-background-color: #000080;">
+                        <Pane fx:id="feePane" layoutX="122.0" layoutY="182.0" prefHeight="223.0" prefWidth="487.0" style="-fx-background-color: #000080;" visible="false">
                            <children>
                               <Label layoutX="201.0" layoutY="67.0" prefHeight="46.0" prefWidth="224.0" text="حقوق دریافتی شما در ماه جاری :" textFill="WHITE">
                                  <font>
@@ -209,7 +209,7 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <ImageView fitHeight="96.0" fitWidth="122.0" layoutX="631.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="649.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@dayOff.png" />
                            </image>

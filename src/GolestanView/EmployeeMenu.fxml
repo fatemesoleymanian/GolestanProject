@@ -135,7 +135,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="666.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
+      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="672.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
         <tabs>
           <Tab fx:id="empFeeTab" disable="true" style="-fx-background-color: #00bfff;">
                <content>

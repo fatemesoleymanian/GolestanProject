@@ -85,7 +85,7 @@ public class EmployeeMenu implements Initializable {
     @FXML
     private Pane reactionPaneForLoan;
 
-    public String religionTxt , nationalityTxt,militaryTxt,educationTxt,maritalTxt,loanTxt;
+    public String religionTxt , nationalityTxt,militaryTxt,educationTxt,maritalTxt,loanTxt1,loanTxt2;
 
     @FXML
     private MenuItem tenmillionLoanITxt , twelvemillionLoanITxt , fivemillionLoanITxt , eighteenmonthsLoanITxt,
@@ -235,11 +235,12 @@ public class EmployeeMenu implements Initializable {
     @FXML
     public void seeLastStateBtn(ActionEvent actionEvent) {
         empLastStateLV.setVisible(true);
+        // TODO: 12/20/2020 listviewsho por krdi?
     }
 
     @FXML
     public void clickForLoanBtn(ActionEvent actionEvent) {
-        if (loanTxt.equals("")|| personToGauranteeTxt.getText().compareTo("")==0){
+        if (loanTxt1.equals("")||loanTxt2.equals("")|| personToGauranteeTxt.getText().compareTo("")==0){
             EntrancePage.alertToFill();
         }else {
             reactionPaneForLoan.setVisible(true);
@@ -249,7 +250,6 @@ public class EmployeeMenu implements Initializable {
 
     @FXML
     public void clickToSaveDocBtn(ActionEvent actionEvent) {
-        // TODO: 12/18/2020
         if (docNumTxt.getText().compareTo("")==0 || docTypeTxt.getText().compareTo("")==0){
             EntrancePage.alertToFill();
         }else {
@@ -260,11 +260,14 @@ public class EmployeeMenu implements Initializable {
     }
     @FXML
     public void clickToSeeMyDocs(ActionEvent actionEvent) {
+        // TODO: 12/21/2020 rikhti to list?
         docsLV.setVisible(true);
     }
 
     @FXML
-    public void saveInfoBtn(ActionEvent actionEvent) {// TODO: 12/19/2020 hme txt ha check she va insert she
+    public void saveInfoBtn(ActionEvent actionEvent) {// TODO: 12/21/2020 oona ro aval settext kn  ba select
+        // TODO: 12/19/2020 bad hme txt va item ha ha check she ke khali nabashe bad update she
+
     }
                                 //******** MENU ITEMS **********
     @FXML
@@ -325,22 +328,22 @@ public class EmployeeMenu implements Initializable {
     public void clickMarriedBtn(ActionEvent actionEvent) { maritalTxt="متاهل"; }
 
     @FXML
-    public void askFor18monthsLoanItem(ActionEvent actionEvent) {loanTxt="l"; eighteenmonthsLoanITxt.setText("هجده ماهه"); }
+    public void askFor18monthsLoanItem(ActionEvent actionEvent) {loanTxt1="l"; eighteenmonthsLoanITxt.setText("هجده ماهه"); }
 
     @FXML
-    public void askFor5millionLoanItem(ActionEvent actionEvent) {loanTxt="l"; fivemillionLoanITxt.setText("پنج میلیون تومان"); }
+    public void askFor5millionLoanItem(ActionEvent actionEvent) {loanTxt2="l"; fivemillionLoanITxt.setText("پنج میلیون تومان"); }
 
     @FXML
-    public void askFor10millionLoanItem(ActionEvent actionEvent) { loanTxt="l";tenmillionLoanITxt.setText("ده میلیون تومان"); }
+    public void askFor10millionLoanItem(ActionEvent actionEvent) { loanTxt2="l";tenmillionLoanITxt.setText("ده میلیون تومان"); }
 
     @FXML
-    public void askFor12millionLoanItem(ActionEvent actionEvent) {loanTxt="l"; twelvemillionLoanITxt.setText("دوازده میلیون تومان"); }
+    public void askFor12millionLoanItem(ActionEvent actionEvent) {loanTxt2="l"; twelvemillionLoanITxt.setText("دوازده میلیون تومان"); }
 
     @FXML
-    public void askFor6monthsLoanItem(ActionEvent actionEvent) { loanTxt="l";sixmonthsLoanITxt.setText("شش ماهه"); }
+    public void askFor6monthsLoanItem(ActionEvent actionEvent) { loanTxt1="l";sixmonthsLoanITxt.setText("شش ماهه"); }
 
     @FXML
-    public void askFor1YearLoanItem(ActionEvent actionEvent) { loanTxt="l";oneYearLoanITxt.setText("یکساله");}
+    public void askFor1YearLoanItem(ActionEvent actionEvent) { loanTxt1="l";oneYearLoanITxt.setText("یکساله");}
 
 
 }

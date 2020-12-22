@@ -182,6 +182,11 @@
                               <Font name="AdobeArabic-Bold" size="25.0" />
                            </font>
                         </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@TeacherReport.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
@@ -196,7 +201,7 @@
                            </font>
                         </JFXButton>
                         <JFXListView fx:id="teacherFeeLV" layoutX="48.0" layoutY="208.0" prefHeight="221.0" prefWidth="596.0" style="-fx-background-color: #000000;" visible="false" />
-                        <ImageView fitHeight="109.0" fitWidth="84.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="77.0" fitWidth="78.0" layoutX="651.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@teacherSalary.jpg" />
                            </image>
@@ -209,7 +214,7 @@
                <content>
                   <AnchorPane prefHeight="791.0" prefWidth="729.0">
                      <children>
-                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="-7.0" layoutY="28.0" prefHeight="55.0" prefWidth="698.0" text="برای ثبت یا تغییر نمره دانشجو لطفا اطلاعات دانشجو را وارد کنید .">
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="-108.0" layoutY="48.0" prefHeight="55.0" prefWidth="698.0" text="برای ثبت یا تغییر نمره دانشجو لطفا اطلاعات دانشجو را وارد کنید .">
                            <font>
                               <Font name="AdobeArabic-Bold" size="26.0" />
                            </font>
@@ -239,6 +244,11 @@
                               <Font name="AdobeArabic-Bold" size="31.0" />
                            </font>
                         </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
@@ -247,7 +257,7 @@
                <content>
                   <AnchorPane prefHeight="750.0" prefWidth="729.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" layoutX="209.0" layoutY="27.0" prefHeight="34.0" prefWidth="470.0" text="برای حذف دانشجو لطفا فیلد های زیر را کامل کنید ." textAlignment="RIGHT">
+                        <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="54.0" prefHeight="34.0" prefWidth="470.0" text="برای حذف دانشجو لطفا فیلد های زیر را کامل کنید ." textAlignment="RIGHT">
                            <font>
                               <Font name="AdobeArabic-Bold" size="27.0" />
                            </font>
@@ -277,6 +287,11 @@
                               <Font name="AdobeArabic-Bold" size="30.0" />
                            </font>
                         </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
@@ -285,7 +300,7 @@
                <content>
                   <AnchorPane prefHeight="793.0" prefWidth="729.0">
                      <children>
-                        <Label layoutX="132.0" layoutY="22.0" text="با وارد کردن اطلاعات دانشجو میتوانید از وضعیت و سوابق تحصیلی دانشجو مطلع شوید .">
+                        <Label layoutX="14.0" layoutY="52.0" text="با وارد کردن اطلاعات دانشجو میتوانید از وضعیت و سوابق تحصیلی دانشجو مطلع شوید .">
                            <font>
                               <Font name="AdobeArabic-Bold" size="25.0" />
                            </font>
@@ -311,6 +326,11 @@
                               <Font name="AdobeArabic-Bold" size="22.0" />
                            </font>
                         </JFXTextField>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content></Tab>
@@ -318,7 +338,7 @@
                <content>
                   <AnchorPane prefHeight="792.0" prefWidth="729.0">
                      <children>
-                        <Label layoutX="124.0" layoutY="33.0" text="برای مشاهده درصد رضایت دانشجویان از تدریس خود بر روی دکمه زیر کلیک کنید . ">
+                        <Label layoutX="28.0" layoutY="20.0" text="برای مشاهده درصد رضایت دانشجویان از تدریس خود بر روی دکمه زیر کلیک کنید . ">
                            <font>
                               <Font name="AdobeArabic-Bold" size="26.0" />
                            </font>
@@ -347,6 +367,11 @@
                               </ImageView>
                            </children>
                         </Pane>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@evaluate.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content></Tab>

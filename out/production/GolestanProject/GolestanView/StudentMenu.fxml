@@ -231,27 +231,27 @@
                               <Reflection />
                            </effect>
                         </Label>
-                        <JFXTextField fx:id="cardNumberTxt" focusColor="WHITE" labelFloat="true" layoutX="332.0" layoutY="144.0" prefHeight="46.0" prefWidth="220.0" unFocusColor="WHITE">
+                        <JFXTextField fx:id="cardNumberTxt" focusColor="WHITE" labelFloat="true" layoutX="333.0" layoutY="149.0" prefHeight="46.0" prefWidth="220.0" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="23.0" />
                            </font>
                         </JFXTextField>
-                        <JFXPasswordField focusColor="WHITE" labelFloat="true" layoutX="362.0" layoutY="224.0" prefHeight="35.0" prefWidth="191.0" unFocusColor="WHITE">
+                        <JFXPasswordField fx:id="secodPassForCardTxt" focusColor="WHITE" labelFloat="true" layoutX="362.0" layoutY="224.0" prefHeight="35.0" prefWidth="191.0" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="23.0" />
                            </font>
                         </JFXPasswordField>
-                        <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="426.0" layoutY="310.0" prefHeight="35.0" prefWidth="135.0" unFocusColor="WHITE">
+                        <JFXTextField fx:id="cvv2Txt" focusColor="WHITE" labelFloat="true" layoutX="426.0" layoutY="310.0" prefHeight="35.0" prefWidth="135.0" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="23.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="443.0" layoutY="408.0" prefHeight="34.0" prefWidth="101.0" unFocusColor="WHITE">
+                        <JFXTextField fx:id="expireP2Txt" focusColor="WHITE" labelFloat="true" layoutX="443.0" layoutY="408.0" prefHeight="34.0" prefWidth="101.0" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="21.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="299.0" layoutY="408.0" prefHeight="25.0" prefWidth="97.0" unFocusColor="WHITE">
+                        <JFXTextField fx:id="expireP1Txt" focusColor="WHITE" labelFloat="true" layoutX="299.0" layoutY="408.0" prefHeight="25.0" prefWidth="97.0" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="21.0" />
                            </font>
@@ -286,6 +286,15 @@
                               <Font name="AdobeArabic-Bold" size="24.0" />
                            </font>
                         </Label>
+                        <Pane fx:id="resultPayPane" layoutX="55.0" layoutY="390.0" prefHeight="65.0" prefWidth="153.0" style="-fx-background-color: #ffffff;" visible="false">
+                           <children>
+                              <Label alignment="TOP_RIGHT" layoutX="-57.0" layoutY="14.0" prefHeight="94.0" prefWidth="210.0" text="تراکنش با موفقیت انجام شد !">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </content></Tab>
@@ -520,6 +529,16 @@
                                     <Font name="AdobeArabic-Bold" size="20.0" />
                                  </font>
                               </JFXButton>
+                              <Label fx:id="loadBackPassTxt" layoutX="242.0" layoutY="264.0" prefHeight="24.0" prefWidth="77.0" textFill="WHITE" visible="false">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="332.0" layoutY="262.0" text="کلمه عبور :" textFill="WHITE">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="23.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </Pane>
                         <ImageView fitHeight="94.0" fitWidth="111.0" layoutX="638.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
