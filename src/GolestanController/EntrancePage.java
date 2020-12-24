@@ -34,7 +34,7 @@ public class EntrancePage implements Initializable {
     //******** ALL COMPONENTS *****
 
     @FXML
-    private Button reseyStPassword;
+    private Button resetStPassword;
 
     @FXML
     private Button resetTePassword;
@@ -162,7 +162,7 @@ public class EntrancePage implements Initializable {
             alertToFill(); }
         else {
             if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010") && txtCode.getText().equals(code.getText())) {
-                Stage stage = (Stage) reseyStPassword.getScene().getWindow();
+                Stage stage = (Stage) resetStPassword.getScene().getWindow();
                 stage.close();
                 Stage primarystage = new Stage();
                 AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
