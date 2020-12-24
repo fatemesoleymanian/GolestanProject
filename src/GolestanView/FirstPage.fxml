@@ -60,7 +60,7 @@
       <JFXListView fx:id="notice2LV" layoutX="19.0" layoutY="504.0" prefHeight="156.0" prefWidth="563.0" style="-fx-background-color: #d3d3d3;" />
       <Pane layoutX="19.0" layoutY="284.0" prefHeight="27.0" prefWidth="563.0" style="-fx-background-color: #b22222;">
          <children>
-            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="455.0" layoutY="5.0" prefHeight="17.0" prefWidth="98.0" text="شغول پغول" textFill="#aba6a6">
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="455.0" layoutY="5.0" prefHeight="17.0" prefWidth="98.0" text="اطلاعیه اول" textFill="#aba6a6">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -69,7 +69,7 @@
       </Pane>
       <Pane layoutX="19.0" layoutY="477.0" prefHeight="27.0" prefWidth="563.0" style="-fx-background-color: #b22222;">
          <children>
-            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="495.0" layoutY="5.0" text="اگوری پگور" textFill="#aba6a6">
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="495.0" layoutY="5.0" text="اطلاعیه دوم" textFill="#aba6a6">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

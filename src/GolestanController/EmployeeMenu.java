@@ -123,23 +123,11 @@ public class EmployeeMenu implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition=new HamburgerBackArrowBasicTransition(hamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
-        initDate();
-        initClock();
+        EntrancePage.initClock(dateTime);
+        EntrancePage.initDate(date);
         // TODO: 12/18/2020 feAmountTxt.setText();
         // TODO: 12/22/2020    empNameLbl.setText(az db bgir);
 
-    }
-    private void initClock() {
-
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            dateTime.setText(LocalDateTime.now().format(formatter));
-        }), new KeyFrame(Duration.seconds(1)));
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
-    }
-    public void initDate(){
-        date.setValue(LocalDate.now());
     }
 
                             //******** CLOSE AND OPEN SMOOTHLY *******

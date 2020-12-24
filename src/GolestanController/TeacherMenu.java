@@ -122,29 +122,16 @@ public class TeacherMenu implements Initializable {
 
     }
                                  //********* INITIALIZING ********
+                                 //********* PREPARE DATE AND TIME *******
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition=new HamburgerBackArrowBasicTransition(HamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
-        initDate();
-        initClock();
+        EntrancePage.initClock(dateTime);
+        EntrancePage.initDate(date);
         // TODO: 12/22/2020 satisfiedPercentTxt.setText(az db bgir);
 
         // TODO: 12/17/2020 add LVs don't forget!
-    }
-                            //********* PREPARE DATE AND TIME *******
-    private void initClock() {
-
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd   HH:mm:ss");
-            dateTime.setText(LocalDateTime.now().format(formatter));
-        }), new KeyFrame(Duration.seconds(1)));
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
-    }
-
-    public void initDate(){
-        date.setValue(LocalDate.now());
     }
 
     // TODO: 12/17/2020  look if u want to be able to pass the right Stnum and pass make it final static i mean --->final static String Stnum= or u can

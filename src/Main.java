@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+/**   CREATED BY FATEME SOLEYMANIAN AND HOSSEIN MIRZAPUR */
 
 public class Main extends Application {
 

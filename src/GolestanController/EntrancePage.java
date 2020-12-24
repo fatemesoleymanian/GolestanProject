@@ -55,10 +55,10 @@ public class EntrancePage implements Initializable {
     private JFXTextField txtUsername;
 
     @FXML
-    Label dateTime;
+    private Label dateTime;
 
     @FXML
-    private JFXDatePicker date;
+    private  JFXDatePicker date;
 
 
     @FXML
@@ -69,7 +69,7 @@ public class EntrancePage implements Initializable {
     // TODO: 12/17/2020  put txtpasword and txtuserName to them so u  can access them in this package!
 
                         //********* PREPARE DATE AND TIME *******
-    private void initClock() {
+    public static void initClock(Label dateTime) {
 
         Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
@@ -79,22 +79,22 @@ public class EntrancePage implements Initializable {
         clock.play();
     }
 
-    public void initDate() {
+    public static void initDate(JFXDatePicker date) {
         date.setValue(LocalDate.now());
     }
 
-    //******* INITIALIZING *********
+                                 //******* INITIALIZING *********
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initClock();
-        initDate();
+        initClock(dateTime);
+        initDate(date);
         code.setText(generateCode());
 
 
     }
 
-    //******* PREPARE CAPTCHA ********
-    public String generateCode() {
+                         //******* PREPARE CAPTCHA ********
+    public static String generateCode() {
         int begin = 97;
         int end = 122;
         int codeLength = 4;
@@ -121,7 +121,7 @@ public class EntrancePage implements Initializable {
             Stage stage = (Stage) enterBtn.getScene().getWindow();
             stage.close();
             Stage primarystage = new Stage();
-            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
+            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
             primarystage.setTitle("Golestan System");
             Scene scene = new Scene(root, 760, 900);
             primarystage.setScene(scene);
@@ -177,7 +177,7 @@ public class EntrancePage implements Initializable {
 
     }
                         //****** ALERTS *********
-    public void alertNoAccess(){
+    public static void alertNoAccess(){
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("**هشدار**");
         alert.setHeaderText(null);
@@ -188,7 +188,7 @@ public class EntrancePage implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("**هشدار**");
         alert.setHeaderText(null);
-        alert.setContentText("لطفا تمامی فیلد ها را پر و به درستی کامل کنید !");
+        alert.setContentText("لطفا تمامی فیلد ها را به درستی کامل کنید !");
         alert.showAndWait();
     }
 }

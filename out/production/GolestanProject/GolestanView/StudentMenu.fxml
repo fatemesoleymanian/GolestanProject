@@ -313,7 +313,7 @@
                               <Font name="AdobeArabic-Bold" size="28.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="653.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reports.jpg" />
                            </image>
@@ -336,7 +336,7 @@
                               <Font name="AdobeArabic-Bold" size="28.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="648.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reports.jpg" />
                            </image>
@@ -359,7 +359,7 @@
                               <Font name="AdobeArabic-Bold" size="28.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reports.jpg" />
                            </image>
@@ -390,13 +390,10 @@
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="94.0" fitWidth="119.0" layoutX="637.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="661.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@tuition.png" />
                            </image>
-                           <effect>
-                              <DropShadow color="WHITE" height="35.83" radius="17.4125" spread="0.1" width="35.82" />
-                           </effect>
                         </ImageView>
                      </children>
                   </AnchorPane>
@@ -431,7 +428,7 @@
                         <TextField fx:id="unit8Txt" layoutX="343.0" layoutY="279.0" />
                         <TextField fx:id="unit9Txt" layoutX="343.0" layoutY="328.0" />
                         <TextField fx:id="unit10Txt" layoutX="343.0" layoutY="373.0" />
-                        <ImageView fitHeight="94.0" fitWidth="104.0" layoutX="642.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@report.jpg" />
                            </image>
@@ -463,7 +460,7 @@
                               <Font name="AdobeArabic-Bold" size="23.0" />
                            </font>
                         </JFXTextField>
-                        <ImageView fitHeight="70.0" fitWidth="68.0" layoutX="652.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="652.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@leaves.png" />
                            </image>
@@ -495,7 +492,7 @@
                               <Font name="AdobeArabic-Bold" size="25.0" />
                            </font>
                         </JFXTextField>
-                        <ImageView fitHeight="94.0" fitWidth="87.0" layoutX="644.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="661.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@changePass.png" />
                            </image>
@@ -541,7 +538,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <ImageView fitHeight="94.0" fitWidth="111.0" layoutX="638.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="638.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@noAccess.png" />
                            </image>

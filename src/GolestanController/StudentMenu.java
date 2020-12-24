@@ -146,7 +146,7 @@ public class StudentMenu implements Initializable {
 
 
 
-    //****** ALL ACTIONS ******
+                            //****** ALL ACTIONS ******
                                 //****** MENU BUTTONS *****
     @FXML
     public void TeachingPressBtn(javafx.event.ActionEvent actionEvent) {
@@ -202,29 +202,17 @@ public class StudentMenu implements Initializable {
         tabs.setVisible(false);
     }
                     //***** INITIALIZING ******
+                    //******* PREPARE CAPTCHA ********
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         hamburgerBackArrowBasicTransition = new HamburgerBackArrowBasicTransition(hamburgurMenu);
         hamburgerBackArrowBasicTransition.setRate(-1);
-        initDate();
-        initClock();
-        code.setText(generateCode());
+        EntrancePage.initClock(dateTime);
+        EntrancePage.initDate(date);
+        code.setText(EntrancePage.generateCode());
         access();
         // TODO: 12/22/2020  userNameLbl.setText(az db)
 
-    }
-                  //********* PREPARE DATE AND TIME *******
-    private void initClock() {
-
-        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            dateTime.setText(LocalDateTime.now().format(formatter));
-        }), new KeyFrame(Duration.seconds(1)));
-        clock.setCycleCount(Animation.INDEFINITE);
-        clock.play();
-    }
-    public void initDate(){
-        date.setValue(LocalDate.now());
     }
 
                     //******** CLOSE AND OPEN SMOOTHLY *******
@@ -362,21 +350,7 @@ public class StudentMenu implements Initializable {
         registerDrawer.setVisible(false);
         systemDrawer.setVisible(false);
     }
-                      //******* PREPARE CAPTCHA ********
 
-    public String generateCode(){
-        int begin = 97;
-        int end = 122;
-        int codeLength = 4;
-        Random random = new Random();
-        StringBuilder buffer = new StringBuilder(codeLength);
-        for (int i = 0; i < codeLength; i++) {
-            int randomLimitedInt = begin + (int)
-                    (random.nextFloat() * (end - begin + 1));
-            buffer.append((char) randomLimitedInt);
-        }
-        return buffer.toString();
-    }
                      //****** TABS BUTTONS *****
     @FXML
     public void pressPayBtn(ActionEvent actionEvent) {
@@ -474,9 +448,9 @@ public class StudentMenu implements Initializable {
 
     public void access(){
         // TODO: 12/18/2020   dobare inja bayad username o passo bgiri az entrance page :if (stId==010101010 && stPass==010101010){
-        accessablePaneForBoss.setVisible(true);
+        //accessablePaneForBoss.setVisible(true);
         // TODO: 12/18/2020 els {
-        disableToAccessLbl.setVisible(true);
+       // disableToAccessLbl.setVisible(true);
     }
     @FXML
     public void clickOnPayPic(MouseEvent mouseEvent) {

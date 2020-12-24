@@ -165,7 +165,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <ImageView fitHeight="121.0" fitWidth="132.0" layoutX="599.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="112.0" layoutX="619.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@employeeSalary.jpg" />
                            </image>
@@ -209,7 +209,7 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <ImageView fitHeight="75.0" fitWidth="87.0" layoutX="649.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="112.0" layoutX="630.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@dayOff.png" />
                            </image>
@@ -232,7 +232,7 @@
                               <Font name="AdobeArabic-Bold" size="26.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="106.0" fitWidth="132.0" layoutX="625.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="112.0" layoutX="632.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@report.png" />
                            </image>
@@ -288,7 +288,7 @@
                               <Font name="AdobeArabic-Bold" size="23.0" />
                            </font>
                         </MenuButton>
-                        <ImageView fitHeight="115.0" fitWidth="132.0" layoutX="599.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="112.0" layoutX="619.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@loan.jpg" />
                            </image>
@@ -326,7 +326,7 @@
                               <Font name="AdobeArabic-Bold" size="22.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="150.0" fitWidth="117.0" layoutX="614.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="99.0" fitWidth="112.0" layoutX="632.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@selection.jpg" />
                            </image>
