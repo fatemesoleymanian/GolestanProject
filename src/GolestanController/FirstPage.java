@@ -83,11 +83,14 @@ public class FirstPage implements Initializable {
 
     }
                             //******* INITIALIZING *********
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        // TODO: 12/17/2020 this method is for get notices from database and put it in two list view
+        // TODO: 12/17/2020 create object from service part
+        //noticeOneList.add();
+       // notice1LV.setItems(noticeOneList);
+        //noticeTwoList.add();
+      //  notice2LV.setItems(noticeTwoList);
     }
 }
 

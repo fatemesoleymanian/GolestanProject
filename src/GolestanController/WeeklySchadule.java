@@ -42,7 +42,8 @@ public class WeeklySchadule implements Initializable {
 
     @FXML
     void pressPrintTheSch(ActionEvent event) throws IOException {
-        // TODO: 12/21/2020 nemidoonm che tokhmi gozashti
+        // TODO: 12/21/2020 halesh kn
+
         JSONObject weeklySchedule = new JSONObject();
 
         weeklySchedule.put("list",stNameTxt.getText()+stCourseTxt.getText()+"\n"+stIdTxt.getText()+"\n"+ weeklyScheduleLV);

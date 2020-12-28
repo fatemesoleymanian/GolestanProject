@@ -105,7 +105,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXDatePicker>
-      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="460.0" opacity="0.6" prefHeight="46.0" prefWidth="90.0" style="-fx-background-color: #000000;" textFill="FLORALWHITE">
+      <Label fx:id="code" alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="460.0" opacity="0.6" prefHeight="46.0" prefWidth="90.0" style="-fx-background-color: #000000;" textFill="FLORALWHITE">
          <font>
             <Font name="Bodoni MT Black" size="23.0" />
          </font>
@@ -113,5 +113,10 @@
             <Reflection />
          </effect>
       </Label>
+      <ImageView fitHeight="26.0" fitWidth="33.0" layoutX="8.0" layoutY="470.0" onMouseClicked="#needToBeRefreshedBtn" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@refresh.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

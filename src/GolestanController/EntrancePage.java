@@ -16,6 +16,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -121,13 +122,18 @@ public class EntrancePage implements Initializable {
             Stage stage = (Stage) enterBtn.getScene().getWindow();
             stage.close();
             Stage primarystage = new Stage();
-            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
+            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
             primarystage.setTitle("Golestan System");
             Scene scene = new Scene(root, 760, 900);
             primarystage.setScene(scene);
             primarystage.show();
-            // TODO: 12/17/2020  check what kind of being XD is the fucking person who wants to enter
+            // TODO: 12/17/2020  check what kind of being XD is the  person who wants to enter
         }
+
+    }
+    @FXML
+    public void needToBeRefreshedBtn(MouseEvent mouseEvent) {
+        code.setText(generateCode());
 
     }
 
@@ -191,4 +197,6 @@ public class EntrancePage implements Initializable {
         alert.setContentText("لطفا تمامی فیلد ها را به درستی کامل کنید !");
         alert.showAndWait();
     }
+
+
 }
