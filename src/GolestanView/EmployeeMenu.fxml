@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="StudentMenuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="760.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.EmployeeMenu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="760.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.EmployeeMenu">
     <children>
         <Label layoutX="358.0" layoutY="4.0" text="به نام خدا">
             <font>
@@ -135,7 +135,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="196.0" opacity="0.83" prefHeight="672.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
+      <TabPane fx:id="tabs" layoutX="-2.0" layoutY="207.0" opacity="0.83" prefHeight="672.0" prefWidth="760.0" side="RIGHT" style="-fx-background-color: #4682b4;" tabClosingPolicy="UNAVAILABLE" visible="false">
         <tabs>
           <Tab fx:id="empFeeTab" disable="true" style="-fx-background-color: #00bfff;">
                <content>
@@ -180,22 +180,22 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
                      <children>
-                        <JFXButton buttonType="RAISED" layoutX="73.0" layoutY="366.0" onAction="#askForBreakBtn" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #000080;" text="درخواست مرخصی" textFill="DEEPSKYBLUE">
+                        <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="404.0" onAction="#askForBreakBtn" prefHeight="54.0" prefWidth="191.0" style="-fx-background-color: #000080;" text="درخواست مرخصی" textFill="DEEPSKYBLUE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="29.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField fx:id="reasonOfBreakTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="9.0" layoutY="124.0" prefHeight="91.0" prefWidth="700.0" promptText="علت مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="reasonOfBreakTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="9.0" layoutY="167.0" prefHeight="91.0" prefWidth="700.0" promptText="علت مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="28.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="breakTimeTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="421.0" layoutY="274.0" prefHeight="75.0" prefWidth="283.0" promptText="مدت درخواستی مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
+                        <JFXTextField fx:id="breakTimeTxt" alignment="CENTER_RIGHT" focusColor="WHITE" labelFloat="true" layoutX="426.0" layoutY="299.0" prefHeight="75.0" prefWidth="283.0" promptText="مدت درخواستی مرخصی :" style="-fx-background-color: #000080;" unFocusColor="WHITE">
                            <font>
                               <Font name="AdobeArabic-Bold" size="28.0" />
                            </font>
                         </JFXTextField>
-                        <Pane fx:id="reactionPane" layoutX="132.0" layoutY="493.0" prefHeight="98.0" prefWidth="547.0" style="-fx-background-color: #ffffff;" visible="false">
+                        <Pane fx:id="reactionPane" layoutX="133.0" layoutY="510.0" prefHeight="98.0" prefWidth="547.0" style="-fx-background-color: #ffffff;" visible="false">
                            <children>
                               <Label layoutX="103.0" layoutY="34.0" text="نتیجه بررسی درخواست شما به زودی اعلام خواهد شد ." textFill="NAVY">
                                  <font>
@@ -341,11 +341,6 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4682b4;">
                      <children>
-                        <JFXButton buttonType="RAISED" layoutX="189.0" layoutY="48.0" onAction="#saveInfoBtn" prefHeight="48.0" prefWidth="353.0" style="-fx-background-radius: 6.0;" text="اعمال تغییرات" textFill="YELLOW">
-                           <font>
-                              <Font name="AdobeArabic-Bold" size="25.0" />
-                           </font>
-                        </JFXButton>
                         <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="663.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Form_Help.jpg" />
@@ -389,47 +384,27 @@
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="556.0" layoutY="310.0" text="نام پدر :" textFill="YELLOW">
+                        <Label layoutX="554.0" layoutY="311.0" text="نام پدر :" textFill="YELLOW">
                            <font>
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="empBirthdateTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="225.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
-                           <font>
-                              <Font name="AdobeArabic-Bold" size="20.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="empFatherNameTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="289.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
-                           <font>
-                              <Font name="AdobeArabic-Bold" size="20.0" />
-                           </font>
-                        </JFXTextField>
-                        <Label layoutX="549.0" layoutY="374.0" text="شماره شناسنامه :" textFill="YELLOW">
+                        <Label layoutX="561.0" layoutY="394.0" text="کد ملی :" textFill="YELLOW">
                            <font>
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="556.0" layoutY="436.0" text="کد ملی :" textFill="YELLOW">
-                           <font>
-                              <Font name="AdobeArabic-Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="empIdTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="355.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                        <JFXTextField fx:id="empNationalCodeTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="315.0" layoutY="384.0" prefHeight="42.0" prefWidth="212.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
                            <font>
                               <Font name="AdobeArabic-Bold" size="20.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="empNationalCodeTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="415.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
-                           <font>
-                              <Font name="AdobeArabic-Bold" size="20.0" />
-                           </font>
-                        </JFXTextField>
-                        <Label layoutX="559.0" layoutY="501.0" text="تلفن همراه :" textFill="YELLOW">
+                        <Label layoutX="559.0" layoutY="470.0" text="تلفن همراه :" textFill="YELLOW">
                            <font>
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="532.0" layoutY="569.0" text="آدرس پست الکترونیکی :" textFill="YELLOW">
+                        <Label layoutX="532.0" layoutY="548.0" text="آدرس پست الکترونیکی :" textFill="YELLOW">
                            <font>
                               <Font name="AdobeArabic-Bold" size="18.0" />
                            </font>
@@ -489,7 +464,7 @@
                               <Font name="AdobeArabic-Bold" size="16.0" />
                            </font>
                         </MenuButton>
-                        <JFXTextField fx:id="empPhoneNumTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="320.0" layoutY="480.0" prefHeight="42.0" prefWidth="208.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                        <JFXTextField fx:id="empPhoneNumTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="320.0" layoutY="459.0" prefHeight="42.0" prefWidth="208.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
                            <font>
                               <Font name="AdobeArabic-Bold" size="20.0" />
                            </font>
@@ -503,7 +478,25 @@
                               <Font name="AdobeArabic-Bold" size="16.0" />
                            </font>
                         </MenuButton>
-                        <JFXTextField fx:id="empEmailTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="307.0" layoutY="548.0" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                        <JFXTextField fx:id="empEmailTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="307.0" layoutY="538.0" prefHeight="42.0" prefWidth="220.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="48.0" onAction="#saveInfoBtn" text="اعمال تغییرات" textFill="YELLOW">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="27.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXTextField fx:id="empFatherNameTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="314.0" layoutY="300.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="20.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="empBirthdateTxt" alignment="CENTER_RIGHT" focusColor="FLORALWHITE" layoutX="321.0" layoutY="225.0" prefHeight="42.0" prefWidth="206.0" style="-fx-background-color: #FFFAF0;" unFocusColor="#d9fb3e">
                            <font>
                               <Font name="AdobeArabic-Bold" size="20.0" />
                            </font>

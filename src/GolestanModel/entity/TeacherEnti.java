@@ -1,4 +1,4 @@
 package GolestanModel.entity;
 
-public class Entity {
+public class TeacherEnti {
 }

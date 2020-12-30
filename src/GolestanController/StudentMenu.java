@@ -12,9 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -28,7 +26,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.io.IOException;
-import javafx.scene.control.Label;
 
 
 public class StudentMenu implements Initializable {
@@ -143,6 +140,9 @@ public class StudentMenu implements Initializable {
 
     @FXML
     private Label loadBackPassTxt;
+
+    @FXML
+    private Label waitForDeleteResultLbl;
 
 
 
@@ -356,7 +356,7 @@ public class StudentMenu implements Initializable {
     public void pressPayBtn(ActionEvent actionEvent) {
         // TODO: 12/21/2020 1) TuitionTxt.setText(meghdari ke az shahriash moonde); inja na ha to initialize
         if (TuitionTxt.getText().compareTo("") == 0 || cardNumberTxt.getText().length() != 16 ||
-                txtCode.getText() != code.getText() || secodPassForCardTxt.getText().length() < 5 ||
+                !txtCode.getText().equals(code.getText())  || secodPassForCardTxt.getText().length() < 5 ||
                 cvv2Txt.getText().length() != 3 || expireP1Txt.getText().length() != 2 || expireP2Txt.getText().length() != 2) {
             EntrancePage.alertToFill();
         } else {
@@ -381,7 +381,7 @@ public class StudentMenu implements Initializable {
     @FXML
     public void pressToSeeFullInfoBtn(ActionEvent actionEvent) {
         fullInfoLV.setVisible(true);
-        // TODO: 12/21/2020 moadele har sal+ cose term+tedade vahed bere to listesh
+        // TODO: 12/21/2020 moadele har sal+ code term+tedade vahed bere to listesh
 
     }
 
@@ -402,12 +402,36 @@ public class StudentMenu implements Initializable {
     }
     @FXML
     public void saveSelectedUnitsBtn(ActionEvent actionEvent) {
-        // TODO: 12/17/2020 check va insert oonayi ke entekhab shde
-        // TODO: 12/21/2020 har kofom null nis bayad bere to select esmesho select kne bede be inja ke smesh settext she agar asan to code ha nist begim
+        if (unit1Txt.getText().compareTo("")==0 && unit2Txt.getText().compareTo("")==0 &&
+                unit3Txt.getText().compareTo("")==0 && unit4Txt.getText().compareTo("")==0 &&
+                unit5Txt.getText().compareTo("")==0 && unit6Txt.getText().compareTo("")==0 &&
+                unit7Txt.getText().compareTo("")==0 && unit8Txt.getText().compareTo("")==0 &&
+                unit9Txt.getText().compareTo("")==0 && unit10Txt.getText().compareTo("")==0 )
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("***هشدار***");
+            alert.setHeaderText("هیچ درسی انتخاب نشده است ! ");
+            alert.setContentText("");
+            alert.showAndWait();
+        }else
+        {
+            // TODO: 12/21/2020 har kofom null nis bayad bere to select esmesho select kne bede be inja ke smesh settext she agar asan to code ha nist begim
+        }
+
 
     }
     @FXML
     public void deleteSelectedUnitsBtn(ActionEvent actionEvent) {
+        unit1Txt.setText("");
+        unit2Txt.setText("");
+        unit3Txt.setText("");
+        unit4Txt.setText("");
+        unit5Txt.setText("");
+        unit6Txt.setText("");
+        unit7Txt.setText("");
+        unit8Txt.setText("");
+        unit9Txt.setText("");
+        unit10Txt.setText("");
         // TODO: 12/17/2020 delete those are inserted
     }
     @FXML
@@ -426,31 +450,36 @@ public class StudentMenu implements Initializable {
         {
             EntrancePage.alertToFill();
         }else {
+            waitForDeleteResultLbl.setVisible(true);
             // TODO: 12/18/2020  delete student term from db
         }
     }
     @FXML
     public void saveNewPassBtn(ActionEvent actionEvent) {
-        // TODO: 12/21/2020 oon pasi ke bahash vared shdro bgir az entrance oldPassTxt.getText().equals(passe onjayo)
-        // TODO: 12/21/2020  if (newPassTxt.getText()!=confirmNewPassTxt.getText() || newPassTxt.getText().compareTo("")==0
-        //|| confirmNewPassTxt.getText().compareTo("")==0)
-        //{
-            //EntrancePage.alertToFill();}
-        // TODO: 12/18/2020  else{ update the password for student}
+        if (EntrancePage.password.equals(oldPassTxt.getText()) && newPassTxt.getText().equals(confirmNewPassTxt)
+                && newPassTxt.getText().length() == 9)
+        {
+            // TODO: 12/18/2020  update the password for student
+
+        } else EntrancePage.alertToFill();
+
+
     }
     @FXML
     public void findLostPassBtn(ActionEvent actionEvent) {
-        // TODO: 12/21/2020  stIdTxt.getText() ro bede be repo
+
+            // TODO: 12/21/2020  stIdTxt.getText() ro bede be repo
         // TODO: 12/18/2020 oon field hayi ke be karbar neshon nmidim alaki migim hazf shd ro select kn
         loadBackPassTxt.setVisible(true);
         // TODO: 12/21/2020   loadBackPassTxt.setText(natijeye select);
     }
 
     public void access(){
-        // TODO: 12/18/2020   dobare inja bayad username o passo bgiri az entrance page :if (stId==010101010 && stPass==010101010){
-        //accessablePaneForBoss.setVisible(true);
-        // TODO: 12/18/2020 els {
-       // disableToAccessLbl.setVisible(true);
+
+        if(EntrancePage.password.equals("010101010") && EntrancePage.userName.equals("010101010")){
+        accessablePaneForBoss.setVisible(true);}
+
+         else { disableToAccessLbl.setVisible(true);}
     }
     @FXML
     public void clickOnPayPic(MouseEvent mouseEvent) {

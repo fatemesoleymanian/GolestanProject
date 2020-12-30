@@ -1,4 +1,4 @@
 package GolestanModel.service;
 
-public class Serv {
+public class EmpSrv {
 }

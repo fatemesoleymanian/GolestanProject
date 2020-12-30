@@ -12,10 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -32,10 +29,7 @@ import java.util.ResourceBundle;
 
 public class EmployeeMenu implements Initializable {
                                 //********** ALL COMPONENTS ********
-    @FXML
-    private AnchorPane StudentMenuPane;
-
-    @FXML
+     @FXML
     private JFXHamburger hamburgurMenu;
 
     @FXML
@@ -85,7 +79,7 @@ public class EmployeeMenu implements Initializable {
     @FXML
     private Pane reactionPaneForLoan;
 
-    public String religionTxt , nationalityTxt,militaryTxt,educationTxt,maritalTxt,loanTxt1,loanTxt2;
+    public String religionTxt , nationalityTxt,militaryTxt,educationTxt,maritalTxt;
 
     @FXML
     private MenuItem tenmillionLoanITxt , twelvemillionLoanITxt , fivemillionLoanITxt , eighteenmonthsLoanITxt,
@@ -103,12 +97,15 @@ public class EmployeeMenu implements Initializable {
     private Label sayDocSavedTxt;
 
     @FXML
-    private JFXTextField empPhoneNumTxt , empEmailTxt , empAddressTxt , empNationalCodeTxt , empIdTx , empFatherNameTxt,
+    private JFXTextField empPhoneNumTxt , empEmailTxt , empAddressTxt , empNationalCodeTxt , empFatherNameTxt,
     empBirthdateTxt , empNameTxt , empNumTxt;
 
 
 
-                                    //******* TO PLAY EMPLOYEE MENU ********
+
+
+
+    //******* TO PLAY EMPLOYEE MENU ********
     @FXML
     void hamburgurOnMouseClicked(MouseEvent event) {
         hamburgerBackArrowBasicTransition.setRate(hamburgerBackArrowBasicTransition.getRate()* -1);
@@ -229,16 +226,6 @@ public class EmployeeMenu implements Initializable {
     }
 
     @FXML
-    public void clickForLoanBtn(ActionEvent actionEvent) {
-        if (loanTxt1.equals("")||loanTxt2.equals("")|| personToGauranteeTxt.getText().compareTo("")==0){
-            EntrancePage.alertToFill();
-        }else {
-            reactionPaneForLoan.setVisible(true);
-            // TODO: 12/18/2020 dar db save she
-        }
-    }
-
-    @FXML
     public void clickToSaveDocBtn(ActionEvent actionEvent) {
         if (docNumTxt.getText().compareTo("")==0 || docTypeTxt.getText().compareTo("")==0){
             EntrancePage.alertToFill();
@@ -255,85 +242,152 @@ public class EmployeeMenu implements Initializable {
     }
 
     @FXML
-    public void saveInfoBtn(ActionEvent actionEvent) {// TODO: 12/21/2020 oona ro aval settext kn  ba select
-        // TODO: 12/19/2020 bad hme txt va item ha ha check she ke khali nabashe bad update she
+    public void clickForLoanBtn(ActionEvent actionEvent) {
+        if (personToGauranteeTxt.getText().compareTo("") == 0 || loanselect1 == false ||
+                loanselect2==false )
+        { EntrancePage.alertToFill(); }
+        else {
+            reactionPaneForLoan.setVisible(true);
+            // TODO: 12/18/2020 dar db save she -> personToGauranteeTxt.getText() ; va ls1 va ls2
+
+
+        }
+    }
+    public boolean loanselect1=false; public String ls1;
+    public boolean loanselect2=false; public String ls2;
+    @FXML
+    public void askFor18monthsLoanItem(ActionEvent actionEvent) {
+        loanselect1=true;
+        ls1=eighteenmonthsLoanITxt.getText();
+
+         }
+
+    @FXML
+    public void askFor1YearLoanItem(ActionEvent actionEvent) {
+        loanselect1=true;
+        ls1=oneYearLoanITxt.getText();
 
     }
-                                //******** MENU ITEMS **********
     @FXML
-    public void clickIslamBtn(ActionEvent actionEvent) { religionTxt="اسلام"; }
+    public void askFor6monthsLoanItem(ActionEvent actionEvent) {
+        loanselect1=true;
+        ls1=sixmonthsLoanITxt.getText();
+          }
 
     @FXML
-    public void cliickKalimiBtn(ActionEvent actionEvent) { religionTxt="کلیمی"; }
+    public void askFor5millionLoanItem(ActionEvent actionEvent) {
+        loanselect2=true;
+        ls2=fivemillionLoanITxt.getText();
+
+    }
 
     @FXML
-    public void clickZoroastrianBtn(ActionEvent actionEvent) { religionTxt="زرتشتی"; }
+    public void askFor10millionLoanItem(ActionEvent actionEvent) {
+        loanselect2=true;
+        ls2=tenmillionLoanITxt.getText();
+
+    }
 
     @FXML
-    public void clickChristianBtn(ActionEvent actionEvent) { religionTxt="مسیحی"; }
+    public void askFor12millionLoanItem(ActionEvent actionEvent) {
+        loanselect2=true;
+        ls2=twelvemillionLoanITxt.getText();
+
+    }
 
     @FXML
-    public void clickOthersReligion(ActionEvent actionEvent) { religionTxt="سایر"; }
+    public void saveInfoBtn(ActionEvent actionEvent) {
+        // TODO: 12/21/2020 oona ro aval settext kn  ba select inja na ha to initialize
+        if (empBirthdateTxt.getText().compareTo("")==0 || empFatherNameTxt.getText().compareTo("")==0
+         || empPhoneNumTxt.getText().compareTo("")==0 || empEmailTxt.getText().compareTo("")==0 || empAddressTxt.getText().compareTo("")==0
+        || empNationalCodeTxt.getText().compareTo("")==0 ){
+            EntrancePage.alertToFill();
+        }
+        else if ( rlg==false || nati==false ||mili==false || edu==false || mari==false)
+        {
+            EntrancePage.alertToFill();
+        }
+        else {
+            // TODO: update she
+            System.out.println("hale");
+        }
+
+    }
+    public boolean rlg=false ,nati=false, mili=false ,edu=false ,mari=false;
 
     @FXML
-    public void clickIraniBtn(ActionEvent actionEvent) { nationalityTxt="ایرانی"; }
+    public void clickIslamBtn(ActionEvent actionEvent) {
+        rlg=true;
+        religionTxt="اسلام"; }
 
     @FXML
-    public void clickForeignBtn(ActionEvent actionEvent) { nationalityTxt="غیرایرانی"; }
+    public void cliickKalimiBtn(ActionEvent actionEvent) {
+        rlg=true;
+        religionTxt="کلیمی"; }
 
     @FXML
-    public void clickUndefiendMilitaryBtn(ActionEvent actionEvent) { militaryTxt="عدم شمول"; }
+    public void clickZoroastrianBtn(ActionEvent actionEvent) {
+        rlg=true;
+        religionTxt="زرتشتی"; }
 
     @FXML
-    public void clickDoneMilitaryBtn(ActionEvent actionEvent) { militaryTxt="خدمت کرده"; }
+    public void clickChristianBtn(ActionEvent actionEvent) {
+        rlg=true;
+        religionTxt="مسیحی"; }
 
     @FXML
-    public void clickInProgressMilitaryBtn(ActionEvent actionEvent) { militaryTxt="در حال خدمت"; }
+    public void clickOthersReligion(ActionEvent actionEvent) {
+        rlg=true;
+        religionTxt="سایر"; }
 
     @FXML
-    public void clickNoNeedMilitaryBtn(ActionEvent actionEvent) { militaryTxt="معافیت دائم"; }
+    public void clickIraniBtn(ActionEvent actionEvent) { nationalityTxt="ایرانی";
+    nati=true;
+    }
 
     @FXML
-    public void clickOthersMilitaryBtn(ActionEvent actionEvent) { militaryTxt="سایر"; }
+    public void clickForeignBtn(ActionEvent actionEvent) { nationalityTxt="غیرایرانی"; nati=true; }
 
     @FXML
-    public void clickHighSchoolBtn(ActionEvent actionEvent) { educationTxt="زیردیپلم"; }
+    public void clickUndefiendMilitaryBtn(ActionEvent actionEvent) { militaryTxt="عدم شمول";
+    mili=true;}
 
     @FXML
-    public void clickDiplomaBtn(ActionEvent actionEvent) { educationTxt="دیپلم"; }
+    public void clickDoneMilitaryBtn(ActionEvent actionEvent) {  mili=true; militaryTxt="خدمت کرده"; }
 
     @FXML
-    public void clickAssociateDegreeBtn(ActionEvent actionEvent) { educationTxt="فوق دیپلم"; }
+    public void clickInProgressMilitaryBtn(ActionEvent actionEvent) {mili=true;  militaryTxt="در حال خدمت"; }
 
     @FXML
-    public void clickBachelorBtn(ActionEvent actionEvent) { educationTxt="لیسانس"; }
+    public void clickNoNeedMilitaryBtn(ActionEvent actionEvent) {mili=true;  militaryTxt="معافیت دائم"; }
 
     @FXML
-    public void clickMABtn(ActionEvent actionEvent) { educationTxt="فوق لیسانس"; }
+    public void clickOthersMilitaryBtn(ActionEvent actionEvent) { mili=true; militaryTxt="سایر"; }
 
     @FXML
-    public void clickSingleBtn(ActionEvent actionEvent) { maritalTxt="مجرد"; }
+    public void clickHighSchoolBtn(ActionEvent actionEvent) { edu=true;educationTxt="زیردیپلم"; }
 
     @FXML
-    public void clickMarriedBtn(ActionEvent actionEvent) { maritalTxt="متاهل"; }
+    public void clickDiplomaBtn(ActionEvent actionEvent) { edu=true; educationTxt="دیپلم"; }
 
     @FXML
-    public void askFor18monthsLoanItem(ActionEvent actionEvent) {loanTxt1="l"; eighteenmonthsLoanITxt.setText("هجده ماهه"); }
+    public void clickAssociateDegreeBtn(ActionEvent actionEvent) {edu=true; educationTxt="فوق دیپلم"; }
 
     @FXML
-    public void askFor5millionLoanItem(ActionEvent actionEvent) {loanTxt2="l"; fivemillionLoanITxt.setText("پنج میلیون تومان"); }
+    public void clickBachelorBtn(ActionEvent actionEvent) {edu=true; educationTxt="لیسانس"; }
 
     @FXML
-    public void askFor10millionLoanItem(ActionEvent actionEvent) { loanTxt2="l";tenmillionLoanITxt.setText("ده میلیون تومان"); }
+    public void clickMABtn(ActionEvent actionEvent) {edu=true; educationTxt="فوق لیسانس"; }
 
     @FXML
-    public void askFor12millionLoanItem(ActionEvent actionEvent) {loanTxt2="l"; twelvemillionLoanITxt.setText("دوازده میلیون تومان"); }
+    public void clickSingleBtn(ActionEvent actionEvent) {mari=true; maritalTxt="مجرد"; }
 
     @FXML
-    public void askFor6monthsLoanItem(ActionEvent actionEvent) { loanTxt1="l";sixmonthsLoanITxt.setText("شش ماهه"); }
+    public void clickMarriedBtn(ActionEvent actionEvent) { mari=true;maritalTxt="متاهل"; }
 
-    @FXML
-    public void askFor1YearLoanItem(ActionEvent actionEvent) { loanTxt1="l";oneYearLoanITxt.setText("یکساله");}
+
+
+
 
 
 }

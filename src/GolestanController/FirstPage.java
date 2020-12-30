@@ -15,14 +15,10 @@ import javafx.scene.control.Separator;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 
 

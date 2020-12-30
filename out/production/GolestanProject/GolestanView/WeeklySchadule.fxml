@@ -6,33 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.WeeklySchadule">
    <children>
-      <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="24.0" layoutY="420.0" onAction="#pressPrintTheSch" prefHeight="38.0" prefWidth="90.0" style="-fx-alignment: #ffffff;" text="چاپ" textAlignment="RIGHT">
-         <font>
-            <Font name="AdobeArabic-Bold" size="24.0" />
-         </font>
-      </JFXButton>
       <JFXListView fx:id="weeklyScheduleLV" layoutX="37.0" layoutY="116.0" prefHeight="273.0" prefWidth="526.0" />
-      <Label fx:id="stNameTxt" alignment="TOP_RIGHT" layoutX="386.0" layoutY="21.0" prefHeight="27.0" prefWidth="171.0" textFill="WHITE">
+      <Label layoutX="246.0" layoutY="51.0" text="برنامه هفتگی" textFill="WHITE">
          <font>
-            <Font name="AdobeArabic-Bold" size="23.0" />
-         </font>
-      </Label>
-      <Label fx:id="stIdTxt" alignment="TOP_RIGHT" layoutX="399.0" layoutY="64.0" textFill="WHITE">
+            <Font name="AdobeArabic-Bold" size="30.0" />
+         </font></Label>
+      <JFXButton fx:id="exitBtn" layoutX="14.0" layoutY="415.0" onAction="#pressexitBtn" text="بستن" textFill="WHITE">
          <font>
-            <Font name="AdobeArabic-Bold" size="23.0" />
-         </font>
-      </Label>
-      <Label fx:id="stCourseTxt" alignment="TOP_RIGHT" layoutX="50.0" layoutY="64.0" prefHeight="27.0" prefWidth="171.0" textFill="WHITE">
-         <font>
-            <Font name="AdobeArabic-Bold" size="23.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="exitBtn" alignment="CENTER" buttonType="RAISED" layoutX="102.0" layoutY="420.0" onAction="#pressexitBtn" prefHeight="38.0" prefWidth="90.0" style="-fx-alignment: #ffffff;" text="خروج" textAlignment="RIGHT">
-         <font>
-            <Font name="AdobeArabic-Bold" size="24.0" />
+            <Font name="AdobeArabic-Bold" size="25.0" />
          </font>
       </JFXButton>
    </children>

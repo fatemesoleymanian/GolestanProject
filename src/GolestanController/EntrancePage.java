@@ -1,35 +1,24 @@
 package GolestanController;
 
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+
+import com.jfoenix.controls.*;
+import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.fxml.*;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import javax.print.DocFlavor;
 import java.io.IOException;
-
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
+
 
 public class EntrancePage implements Initializable {
     //******** ALL COMPONENTS *****
@@ -66,8 +55,8 @@ public class EntrancePage implements Initializable {
     private Label code;
 
 
-    public static String userName, password;
-    // TODO: 12/17/2020  put txtpasword and txtuserName to them so u  can access them in this package!
+    public  static String password;
+    public  static String userName;
 
                         //********* PREPARE DATE AND TIME *******
     public static void initClock(Label dateTime) {
@@ -87,6 +76,7 @@ public class EntrancePage implements Initializable {
                                  //******* INITIALIZING *********
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         initClock(dateTime);
         initDate(date);
         code.setText(generateCode());
@@ -113,71 +103,67 @@ public class EntrancePage implements Initializable {
                     //******   BUTTONS ON ACTIONS **********
     @FXML
     void enterBtnPresss(ActionEvent event) throws IOException {
+        userName=txtUsername.getText();
+        password=txtPassword.getText();
 
-        if (!(txtCode.getText().equals(code.getText()))|| txtPassword.getText().compareTo(" ") == 0 || txtUsername.getText().compareTo(" ") == 0) {
-            alertToFill();        }
-        else {
+        if (!(txtCode.getText().equals(code.getText()))|| txtPassword.getText().compareTo(" ") == 0
+                || txtUsername.getText().compareTo(" ") == 0) { alertToFill();       }
 
-            // TODO: 12/18/2020
-            Stage stage = (Stage) enterBtn.getScene().getWindow();
-            stage.close();
-            Stage primarystage = new Stage();
-            AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/TeacherMenu.fxml"));
-            primarystage.setTitle("Golestan System");
-            Scene scene = new Scene(root, 760, 900);
-            primarystage.setScene(scene);
-            primarystage.show();
-            // TODO: 12/17/2020  check what kind of being XD is the  person who wants to enter
-        }
+        // TODO: 12/17/2020  check what kind of being XD is the  person who wants to enter
+        else
+            {
+            if (txtUsername.getText().startsWith("9") /*&& service.getinstance.felan==true*/)
+            { openPane("GolestanView/StudentMenu.fxml",enterBtn); }
+
+            else if (txtUsername.getText().startsWith("7") /*&& service.getinstamce.felan==true*/)
+            { openPane("GolestanView/TeacherMenu.fxml",enterBtn); }
+
+            else if (txtUsername.getText().startsWith("8") /*&& service.getinstamce.felan==true*/)
+            { openPane("GolestanView/EmployeeMenu.fxml",enterBtn); }
+
+            else alertToFill();
+
+             }
 
     }
     @FXML
-    public void needToBeRefreshedBtn(MouseEvent mouseEvent) {
-        code.setText(generateCode());
+    public void needToBeRefreshedBtn(MouseEvent mouseEvent) { code.setText(generateCode()); }
 
-    }
 
     @FXML
-    void exitBtnPress(ActionEvent event) {
-        Platform.exit();
-    }
+    void exitBtnPress(ActionEvent event) { Platform.exit(); }
+
 
     @FXML
     void resetTePasswordPress(ActionEvent event) throws IOException {
+        userName=txtUsername.getText();
+        password=txtPassword.getText();
         if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
             alertToFill();
         } else {
-            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010") && txtCode.getText().equals(code.getText())) {
-                Stage stage = (Stage) resetTePassword.getScene().getWindow();
-                stage.close();
-                Stage primarystage = new Stage();
-                AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
-                primarystage.setTitle("Golestan System");
-                Scene scene = new Scene(root, 760, 900);
-                primarystage.setScene(scene);
-                primarystage.show();
-            } else {
-                alertNoAccess(); }
+            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010")
+                    && txtCode.getText().equals(code.getText())) {
+                alertToLead();
+                openPane("GolestanView/StudentMenu.fxml",resetTePassword);
+            }
+            else { alertNoAccess(); }
         }
     }
 
     @FXML
 
     public void resetStPasswordPress(ActionEvent actionEvent) throws IOException {
-        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0 || txtUsername.getText().compareTo("") == 0) {
-            alertToFill(); }
+        userName=txtUsername.getText();
+        password=txtPassword.getText();
+        if (txtCode.getText().compareTo("") == 0 || txtPassword.getText().compareTo("") == 0
+                || txtUsername.getText().compareTo("") == 0) { alertToFill(); }
         else {
-            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010") && txtCode.getText().equals(code.getText())) {
-                Stage stage = (Stage) resetStPassword.getScene().getWindow();
-                stage.close();
-                Stage primarystage = new Stage();
-                AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource("GolestanView/StudentMenu.fxml"));
-                primarystage.setTitle("Golestan System");
-                Scene scene = new Scene(root, 760, 900);
-                primarystage.setScene(scene);
-                primarystage.show();
-            } else {
-                alertNoAccess(); }
+            if (txtPassword.getText().equals("010101010") && txtUsername.getText().equals("010101010")
+                    && txtCode.getText().equals(code.getText())) {
+                alertToLead();
+                openPane("GolestanView/StudentMenu.fxml",resetStPassword);
+            }
+            else { alertNoAccess(); }
 
         }
 
@@ -194,8 +180,30 @@ public class EntrancePage implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("**هشدار**");
         alert.setHeaderText(null);
-        alert.setContentText("لطفا تمامی فیلد ها را به درستی کامل کنید !");
+        alert.setContentText("لطفا فیلد ها را به درستی کامل کنید !");
         alert.showAndWait();
+    }
+
+    public void alertToLead()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("");
+        alert.setHeaderText("میتوانید با کلیک بر روی دکمه سیستم وارد قسمت 'تنظیمات بازیابی کلمه عبور' شوید ! ");
+        alert.setContentText("");
+        alert.setHeight(50);
+        alert.setWidth(50);
+        alert.showAndWait();
+    }
+
+    public void openPane(String fxmlAddress ,Button button) throws IOException {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
+        Stage primarystage = new Stage();
+        AnchorPane root = FXMLLoader.load(getClass().getClassLoader().getResource(fxmlAddress));
+        primarystage.setTitle("Golestan System");
+        Scene scene = new Scene(root, 760, 900);
+        primarystage.setScene(scene);
+        primarystage.show();
     }
 
 
