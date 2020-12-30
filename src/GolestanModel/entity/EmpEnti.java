@@ -1,7 +1,7 @@
 package GolestanModel.entity;
 
 public class EmpEnti {
-    String phoneNumber,email,address,nationalCode,id,fatherName,birthDate,name,num;
+    String phoneNumber,email,address,nationalCode,fatherName,birthDate,name,num;
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -35,15 +35,6 @@ public class EmpEnti {
 
     public EmpEnti setNationalCode(String nationalCode) {
         this.nationalCode = nationalCode;
-        return this;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public EmpEnti setId(String id) {
-        this.id = id;
         return this;
     }
 

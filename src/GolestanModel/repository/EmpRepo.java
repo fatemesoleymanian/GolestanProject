@@ -15,16 +15,15 @@ public class EmpRepo implements AutoCloseable {
         connection.setAutoCommit(false);
     }
     public void insert(EmpEnti empEnti)throws Exception{
-        preparedStatement=connection.prepareStatement("insert into emptable(phonenumber,email,address,nationalcode,id,fathername,birthdate,name,num) values (?,?,?,?,?,?,?,?,?)");
+        preparedStatement=connection.prepareStatement("insert into emptable(phonenumber,email,address,nationalcode,fathername,birthdate,name,num) values (?,?,?,?,?,?,?,?)");
         preparedStatement.setString(1, empEnti.getPhoneNumber());
         preparedStatement.setString(2, empEnti.getEmail());
         preparedStatement.setString(3, empEnti.getAddress());
         preparedStatement.setString(4, empEnti.getNationalCode());
-        preparedStatement.setString(5, empEnti.getId());
-        preparedStatement.setString(6, empEnti.getFatherName());
-        preparedStatement.setString(7, empEnti.getBirthDate());
-        preparedStatement.setString(8, empEnti.getName());
-        preparedStatement.setString(9, empEnti.getNum());
+        preparedStatement.setString(5, empEnti.getFatherName());
+        preparedStatement.setString(6, empEnti.getBirthDate());
+        preparedStatement.setString(7, empEnti.getName());
+        preparedStatement.setString(8, empEnti.getNum());
         preparedStatement.executeUpdate();
     }
     public void commit() throws Exception{
