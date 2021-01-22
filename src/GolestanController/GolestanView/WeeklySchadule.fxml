@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="477.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.WeeklySchadule">
+   <children>
+      <JFXListView fx:id="weeklyScheduleLV" layoutX="37.0" layoutY="116.0" prefHeight="273.0" prefWidth="526.0" />
+      <Label layoutX="246.0" layoutY="51.0" text="برنامه هفتگی" textFill="WHITE">
+         <font>
+            <Font name="AdobeArabic-Bold" size="30.0" />
+         </font></Label>
+      <JFXButton fx:id="exitBtn" layoutX="14.0" layoutY="415.0" onAction="#pressexitBtn" text="بستن" textFill="WHITE">
+         <font>
+            <Font name="AdobeArabic-Bold" size="25.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

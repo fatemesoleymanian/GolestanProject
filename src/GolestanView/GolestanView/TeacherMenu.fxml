@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="TaecherMenuPane" maxHeight="900.0" maxWidth="760.0" minHeight="900.0" minWidth="760.0" prefHeight="900.0" prefWidth="760.0" style="-fx-background-color: #FFFAF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.TeacherMenu">
+   <children>
+      <Label layoutX="336.0" layoutY="2.0" text="به نام خدا">
+         <font>
+            <Font name="Arabic Typesetting" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="61.0" text="دانشگاه علم و فرهنگ غیر دولتی-غیر انتفاعی">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="437.0" layoutY="61.0" text="سیستم جامع دانشگاهی گلستان ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <ImageView fitHeight="65.0" fitWidth="73.0" layoutX="4.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@uniArm.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger fx:id="HamburgurMenu" layoutX="687.0" layoutY="130.0" onMouseClicked="#HamburgurOnMouseClicked" prefHeight="30.0" prefWidth="40.0">
+         <effect>
+            <DropShadow height="65.48" radius="36.6875" width="83.27" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXHamburger>
+      <Separator layoutY="101.0" prefHeight="9.0" prefWidth="758.0" style="-fx-background-color: #000000;" />
+      <VBox fx:id="parent" layoutX="4.0" layoutY="119.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="264.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@teacher.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="60.0" top="10.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="teacherNameLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="271.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="teachersBtn" onAction="#PressteachersBtn" prefHeight="100.0" prefWidth="272.0" text="اساتید">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="20.0" radius="9.5" width="20.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="studentsBtn" onAction="#PressstudentsBtn" prefHeight="100.0" prefWidth="264.0" text="دانشجویان">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="20.0" radius="9.5" width="20.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="evaluatingBtn" onAction="#PressevaluatingBtn" prefHeight="100.0" prefWidth="265.0" text="ارزشیابی">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow height="20.0" radius="9.5" width="20.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="exitBtn" onAction="#pressexitBtn" prefHeight="100.0" prefWidth="264.0" text="خروج">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="166.29" radius="75.23249999999999" width="136.64" />
+         </effect>
+      </VBox>
+      <VBox fx:id="StudentsDrawer" layoutX="281.0" layoutY="416.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="99.0" prefWidth="228.0" style="-fx-background-color: #FFFFFF;" visible="false">
+         <children>
+            <JFXButton fx:id="saveANDeditScoresBtn" onAction="#PresssaveANDeditScoresBtn" prefHeight="33.0" prefWidth="240.0" text="ثبت و تغییر نمرات دانشجویان">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="deleteStudentBtn" onAction="#PressdeleteStudentBtn" prefHeight="33.0" prefWidth="229.0" text="حذف دانشجویان">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="studentDescriptionBtn" onAction="#PressstudentDescriptionBtn" prefHeight="33.0" prefWidth="229.0" text="شرح دانشجو">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="62.51" radius="31.497500000000002" width="65.48" />
+         </effect>
+      </VBox>
+      <VBox fx:id="teachersDrawer" layoutX="281.0" layoutY="309.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <JFXButton fx:id="unitsBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PressunitsBtn" prefHeight="50.0" prefWidth="150.0" text="مشاهده دروس اساتید">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="feeBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#PressfeeBtn" prefHeight="50.0" prefWidth="152.0" text="مشاهده حقوق در ترم">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="68.44" radius="33.72" width="68.44" />
+         </effect>
+      </VBox>
+      <VBox fx:id="EvaluateDrawer" layoutX="281.0" layoutY="549.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #ffffff;" visible="false">
+         <children>
+            <JFXButton fx:id="studentEvaluBtn" onAction="#PressstudentEvaluBtn" prefHeight="49.0" prefWidth="224.0" text="مشاهده ارزشیابی دانشجویان">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="12.0" radius="5.5" width="12.0" />
+               </effect>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow height="65.48" radius="32.980000000000004" width="68.44" />
+         </effect>
+      </VBox>
+      <Label fx:id="dateTime" layoutX="559.0" layoutY="20.0" prefHeight="17.0" prefWidth="132.0">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TabPane fx:id="tabs" layoutX="1.0" layoutY="199.0" prefHeight="706.0" prefWidth="758.0" side="RIGHT" style="-fx-background-color: #ffffff;" tabClosingPolicy="UNAVAILABLE" visible="false">
+        <tabs>
+          <Tab fx:id="unitsTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="783.0" prefWidth="729.0">
+                     <children>
+                        <JFXListView fx:id="teacherUnitsLv" layoutX="87.0" layoutY="105.0" prefHeight="431.0" prefWidth="606.0" style="-fx-background-color: #000000;" visible="false" />
+                        <JFXButton buttonType="RAISED" layoutX="277.0" layoutY="624.0" onAction="#pressToSeeTeacherUnitsBtn" prefHeight="56.0" prefWidth="139.0" style="-fx-background-color: #d3d3d3;" text="مشاهده گزارش" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@TeacherReport.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab fx:id="feeTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="288.0" layoutY="633.0" onAction="#pressToSeeFeeBtn" prefHeight="56.0" prefWidth="139.0" style="-fx-background-color: #d3d3d3;" text="مشاهده گزارش" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXListView fx:id="teacherFeeLV" layoutX="48.0" layoutY="208.0" prefHeight="221.0" prefWidth="596.0" style="-fx-background-color: #000000;" visible="false" />
+                        <ImageView fitHeight="77.0" fitWidth="78.0" layoutX="651.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@teacherSalary.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="saveANDeditScoresTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="791.0" prefWidth="729.0">
+                     <children>
+                        <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="-108.0" layoutY="48.0" prefHeight="55.0" prefWidth="698.0" text="برای ثبت یا تغییر نمره دانشجو لطفا اطلاعات دانشجو را وارد کنید .">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="stNameForChangeScoreTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="230.0" layoutY="114.0" prefHeight="49.0" prefWidth="249.0" promptText="نام و نام خانوادگی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="21.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="StIdForChangeScoreTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="231.0" layoutY="265.0" prefHeight="49.0" prefWidth="248.0" promptText="شماره دانشجویی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="21.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="StUnitCodeForChangeScoreTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="226.0" layoutY="426.0" prefHeight="49.0" prefWidth="251.0" promptText="کد درس مورد نظر :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="21.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="StScoreForChangeScoreTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="227.0" layoutY="555.0" prefHeight="49.0" prefWidth="249.0" promptText="نمره :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="21.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="27.0" layoutY="575.0" onAction="#pressSaveScoreBtn" style="-fx-background-color: #d3d3d3;" text="اعمال تغییرات" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="31.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="deleteStudenTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="750.0" prefWidth="729.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="54.0" prefHeight="34.0" prefWidth="470.0" text="برای حذف دانشجو لطفا فیلد های زیر را کامل کنید ." textAlignment="RIGHT">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="stNameForDeleteTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="275.0" layoutY="157.0" prefHeight="42.0" prefWidth="242.0" promptText="نام و نام خانوادگی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="StIdForDeleteTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="277.0" layoutY="306.0" prefHeight="42.0" prefWidth="240.0" promptText="شماره دانشجویی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="deleteTimeTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="274.0" layoutY="445.0" prefHeight="42.0" prefWidth="248.0" promptText="مدت حذف دانشجو  :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="ReasonOfDeleteTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="46.0" layoutY="564.0" prefHeight="42.0" prefWidth="638.0" promptText="علت حذف دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" layoutX="72.0" layoutY="632.0" onAction="#pressDeleteStudentBtn" style="-fx-background-color: #d3d3d3;" text="اعمال تغییرات" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="studentDescriptionTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="793.0" prefWidth="729.0">
+                     <children>
+                        <Label layoutX="52.0" layoutY="36.0" text="با وارد کردن اطلاعات دانشجو میتوانید از وضعیت و سوابق تحصیلی دانشجو مطلع شوید .">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <JFXListView fx:id="studentDescriptionLV" layoutX="73.0" layoutY="419.0" prefHeight="230.0" prefWidth="584.0" style="-fx-background-color: #000000;" visible="false" />
+                        <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="228.0" onAction="#pressObserveStudentBtn" prefHeight="56.0" prefWidth="139.0" style="-fx-background-color: #d3d3d3;" text="مشاهده گزارش" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="stNameforDescriptionTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="458.0" layoutY="102.0" prefHeight="42.0" prefWidth="228.0" promptText="نام و نام خانوادگی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="stIdForDescriptionTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="458.0" layoutY="207.0" prefHeight="42.0" prefWidth="228.0" promptText="شماره دانشجویی دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="stCodeUnitForDescriptionTxt" alignment="CENTER_RIGHT" focusColor="BLACK" layoutX="458.0" layoutY="336.0" prefHeight="42.0" prefWidth="228.0" promptText="کد درس دانشجو :">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="22.0" />
+                           </font>
+                        </JFXTextField>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@deleteOrSave.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab fx:id="studentEvaluTab" closable="false" disable="true" style="-fx-background-color: #ffffff;">
+               <content>
+                  <AnchorPane prefHeight="792.0" prefWidth="729.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="20.0" text="برای مشاهده درصد رضایت دانشجویان از تدریس خود بر روی دکمه زیر کلیک کنید . ">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="28.0" layoutY="90.0" onAction="#pressToSeeEvaluationBtn" prefHeight="56.0" prefWidth="139.0" style="-fx-background-color: #d3d3d3;" text="مشاهده گزارش" textFill="#4059a9">
+                           <font>
+                              <Font name="AdobeArabic-Bold" size="25.0" />
+                           </font>
+                        </JFXButton>
+                        <Pane fx:id="resultOfSatisfactionPane" layoutX="140.0" layoutY="242.0" prefHeight="334.0" prefWidth="417.0" style="-fx-background-color: #000000;" visible="false">
+                           <children>
+                              <Label fx:id="satisfiedPercentTxt" alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="122.0" prefHeight="75.0" prefWidth="188.0" textFill="FLORALWHITE">
+                                 <font>
+                                    <Font name="AdobeArabic-Bold" size="34.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="65.0" fitWidth="73.0" layoutX="-7.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@evaluationForTeacher.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="657.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@evaluate.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+      <JFXDatePicker fx:id="date" defaultColor="BLACK" editable="false" layoutX="691.0" layoutY="16.0" prefHeight="25.0" prefWidth="28.0" showWeekNumbers="true" style="-jfx-default-color: #000000;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXDatePicker>
+   </children>
+</AnchorPane>

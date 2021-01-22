@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Firstpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GolestanController.FirstPage">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <Separator fx:id="sepUni" layoutX="7.0" layoutY="94.0" prefHeight="2.0" prefWidth="586.0" style="-fx-background-color: #000000;" />
+      <Label fx:id="lbl2" alignment="CENTER" contentDisplay="CENTER" layoutX="113.0" layoutY="116.0" prefHeight="88.0" prefWidth="552.0" text="گلستان" textFill="FIREBRICK">
+         <font>
+            <Font name="B Elham" size="79.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl3" alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="204.0" prefHeight="50.0" prefWidth="264.0" text="سیستم جامع دانشگاهی">
+         <font>
+            <Font name="AdobeArabic-Regular" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoimg" fitHeight="80.0" fitWidth="120.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@uniArm.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="entrancebtn" layoutX="225.0" layoutY="245.0" onAction="#pressentrancebtn" prefHeight="39.0" prefWidth="133.0" text="ورود به سیستم">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Hyperlink fx:id="contactUshyperlink" layoutX="470.0" layoutY="53.0" onAction="#pressHyperLink" prefHeight="23.0" prefWidth="76.0" text="ارتباط با ما" textFill="#00000b">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="546.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@3.jpg" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <JFXListView fx:id="notice1LV" layoutX="19.0" layoutY="309.0" opacity="0.77" prefHeight="147.0" prefWidth="563.0" style="-fx-background-color: #d3d3d3;" />
+      <JFXListView fx:id="notice2LV" layoutX="19.0" layoutY="504.0" prefHeight="156.0" prefWidth="563.0" style="-fx-background-color: #d3d3d3;" />
+      <Pane layoutX="19.0" layoutY="284.0" prefHeight="27.0" prefWidth="563.0" style="-fx-background-color: #b22222;">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="455.0" layoutY="5.0" prefHeight="17.0" prefWidth="98.0" text="اطلاعیه اول" textFill="#aba6a6">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="19.0" layoutY="477.0" prefHeight="27.0" prefWidth="563.0" style="-fx-background-color: #b22222;">
+         <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="495.0" layoutY="5.0" text="اطلاعیه دوم" textFill="#aba6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
